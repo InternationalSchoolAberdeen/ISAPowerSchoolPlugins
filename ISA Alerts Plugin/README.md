@@ -1,9 +1,97 @@
-# 🚨 ISA PowerSchool Alerts Plugin
+<h1 align="center">🚨 ISA PowerSchool Alerts Plugin</h1>
+
+* Adds custom alerts to PowerSchool Admin, Teacher & Attendance Screens
+* Alerts use PowerSchool fields to render specific student information based on various parameters that can be set by admin staff.
+* Adds many features to the `Emergency / Medical Page` of PowerSchool Admin that allows medical staff to control alerts and information relating to a students medical needs. 
+
+<p align="center">
+    <img src="./alerts.png" title="Medical Page Guide" />
+</p>
+
+### [Historical Versions](https://github.com/InternationalSchoolAberdeen/ISAPowerSchoolPlugins/tree/main/ISA%20Alerts%20Plugin/Previous%20Versions)
+
+## 🗃 Packaging The Plugin
+> For each version update, update the `plugin.xml` and increment the `version` field <br>
+> Select the `web_root` folder and the `plugin.xml` and add them both to a ZIP file <br>
+> This ZIP file can then be uploaded to the `Plugin Management Screen` of PS
 
 ## ❓ Adding Alerts for New PowerSchool Fields
 
-## 📚 Changelog
+1. Firstly, make sure you have a boolean field that can be used to control if the alert is shown or not, something like, `U_ALERTS.Test_Alert` that can take a `0` or a `1` as a value.
+2. Next, create a file in `web_root/admin/alerts` with the title of your alert .html, e.g. `testAlert.html`. 
+3. Copy the code below into your `testAlert.html`
 
+```html
+<div class="box-round" id="alert-~(studentfrn)">
+	<img class="alertImage" src="/images/isa_alert.youralertimage.png" width="20px" />
+	<div class="alertContent">
+		<h2 tabindex="0">
+			Test Alert
+		</h2>
+		<p style="text-align: center;">
+			Either some pre-set text, <br>
+            or a value from a PowerSchool Field, e.g. ~(U_ALERTS.Test_Alert_Text)
+		</p>
+	</div>
+</div>
+```
+4. You can also now create a custom alert icon, like the ones displayed above with dimensions of `20px x 20px` that can be linked into the alert, replacing `/images/isa_alert.youralertimage.png` with the relative link to your image.
+5. Now, to have the alert display on the student page in PowerSchool Admin, edit `web_root/wildcards/isa_alerts.txt`. And copy the following code to the top of the file, (or between the alerts where you want the new alert to show up).
+
+```html
+~([students.U_ALERTS]Test_Alert;if.fieldvalue.0.then=;if.fieldvalue.1.then=
+<a title="Your Alert Title" href="/admin/alerts/testAlert.html?frn=~(frn)" class="dialogM">
+    <img src="/images/isa_alert.youralertimage.png" border=0 width="20" height="20" title="Your Alert Title"/>
+</a>)
+```
+
+6. That is all that has to be done for an admin only alert. To add an alert for the teacher side of PowerSchool the following steps have to be done.
+7. Make a copy of your `testAlert.html` and place it in `web_root/teachers/alerts`.
+8. Next, open up `web_root/wildcards/isa_alerts_teachers.txt` and add the following code.
+
+```html
+~([students.U_ALERTS]Test_Alert;if.fieldvalue.0.then=;if.fieldvalue.1.then=
+<a title="Your Alert Title" href="/teachers/alerts/testAlert.html?frn=~(frn)" class="dialogM">
+    <img src="/images/isa_alert.youralertimage.png" border=0 width="20" height="20" title="Your Alert Title"/>
+</a>)
+```
+
+9. Now your alert will show up on the student screens, however to add it to the attendance screen, a few more steps have to be done.
+10. Open up the file, `\web_root\teachers\classattendance.isa_alerts.content.footer.txt` & copy the following code, editing the `variable name`, `table name` & `field name` to match those for your custom alert. Paste this editied code below the last SQL query in the file, and before `// Function Step 2`.
+
+```sql
+var testAlertRows (<- change me) = {
+        ~[tlist_sql;
+        select cc.id, s.dcid
+        from cc cc
+        join students s on s.id = cc.studentid
+    left outer join u_alerts ( <- change me) on u_sds.studentsdcid = s.dcid
+        where cc.sectionid = ~(gpv.sectionid;sqlText)
+            and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+        and u_alerts.test_alert (<- change me) = 1 
+        ]"~(1)":"~(2)",[/tlist_sql]"":""
+
+};
+```
+
+11. Now the final step is to copy the code below, again changing the alert `<a />` to match the one from the `isa_alerts_teachers.txt`, replacing the `frn=~(frn)` with `frn=001'+ studcid +'`
+
+```js
+$j.each(carePlanRows, function(ccid, studcid) {
+    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Test Alert" href="/teachers/alerts/testAlert.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.youralertimage.png" border=0 width="20" height="20" title="Test Alert"/></a>');
+});
+```
+12. Now paste this below the comment `// Function Step 2` and if all goes well, you can upload the plugin, enable it, log into PowerTeacher and see your new alert for all the students that have that value set to `1`!
+
+## 🏥 Medical Page
+* This plugin makes major changes to make the default PowerSchool `Medical / Emergency Page` more useful. It also adds in checkbox's and links for ISA's SDS custom fields which, in turn, are used to render the alerts.
+* Below is a help sheet for each of the fields used in the medical page, <i>(I kept forgetting which was which)</i>
+
+<p align="center">
+    <img src="./medical_page_guide.png" title="Medical Page Guide" />
+</p>
+
+## 📚 Changelog
 
 - `v1.84`: Added new care plan alert to PowerTeacher and Attendance Screens
 - `v1.83`: New medical alert altered to be for if student has a medical care plan + minor changes to layout of medical page
