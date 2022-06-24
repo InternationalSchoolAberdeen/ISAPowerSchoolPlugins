@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SDS Updates</title>
+		<!-- required scripts -->
+		~[wc:commonscripts]
+		<!-- Required style sheets: screen.css, and print.css -->
+		<link href="/images/css/screen.css" rel="stylesheet" media="screen" />
+		<link href="/images/css/print.css" rel="stylesheet" media="print" />
+	</head>
+	<body>
+		~[wc:admin_header_frame_css]
+		<!-- breadcrumb start -->
+		<a href="/admin/home.html" target="_top">Start Page</a> &gt;
+		<a href="/admin/students/home.html?selectstudent=nosearch" target="_top"
+			>Student Selection</a
+		>
+		&gt; SDS Updates 
+		<!-- breadcrumb end -->
+		~[wc:admin_navigation_frame_css]
+		<!-- start of main menu and content -->
+		~[wc:title_student_begin_css]SDS Updates ~[wc:title_student_end_css]
+
+		<!-- start of content area -->
+		<p><i><b>Please press SUBMIT at the bottom of this page to save document links.</b></i></p>
+
+		<!-- This section of the code was adapted from the SDS Update Custom Screen as it was easier than re-writing an entirely new form -->
+		<form
+			action="/admin/students/sdsupdate.html?frn=~(frn)&recordSaved=1"
+			method="POST"
+		>
+			<!-- start of content and bounding box -->
+			<div class="box-round">
+				<div style="text-align: left;">
+					<h3 style="vertical-align: middle; display: inline-block;">
+						<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+						Admissions Documents
+					</h3>
+				</div>
+				<table border="0" cellspacing="0" cellpadding="4" class="linkDescList">
+					<colgroup>
+						<col span="1" style="width: 12%;" />
+						<col span="1" style="width: 50%;" />
+					</colgroup>
+					<tr>
+						<td>Previous School Report 1</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Previous_School_Report_1"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.previous_school_report_1"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Previous School Report 2</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Previous_School_Report_2"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.previous_school_report_2"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Previous School Report 3</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Previous_School_Report_3"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.previous_school_report_3"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Confidential Teacher Recommendation</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Confidential_Teacher_Recommend"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.confidential_teacher_recommend"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>MAP Test Report (Admissions)</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]MAP_Test_Report"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.map_test_report"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Writing Sample (Admissions)</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Writing_Sample"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.writing_sample"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>LS Test Report (Admissions)</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]LS_Entrance_Tests"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.ls_entrance_tests"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>EAL Test Report (Admissions)</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]EAL_Entrance_Tests"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.eal_entrance_tests"}'
+							/>
+						</td>
+					</tr>
+				</table>
+				<div style="text-align: left;">
+					<h3 style="vertical-align: middle; display: inline-block;">
+						<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+						Identity Documents
+					</h3>
+				</div>
+				<table border="0" cellspacing="0" cellpadding="4" class="linkDescList">
+					<colgroup>
+						<col span="1" style="width: 12%;" />
+						<col span="1" style="width: 50%;" />
+					</colgroup>
+					<tr>
+						<td>Passport (Primary)</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Passport_1"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.passport_1"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Passport (Secondary / Additional)</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Passport_2"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.passport_2"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Biometric Residence Permit</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Biometric_Residence_Permit"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.biometric_residence_permit"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Biometric Residence Permit 2 (optional)</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Biometric_Residence_Permit_2"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.biometric_residence_permit_2"}'
+							/>
+						</td>
+					</tr>
+				</table>
+				<div style="text-align: left;">
+					<h3 style="vertical-align: middle; display: inline-block;">
+						<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+						Medical Documents
+					</h3>
+				</div>
+				<table border="0" cellspacing="0" cellpadding="4" class="linkDescList">
+					<colgroup>
+						<col span="1" style="width: 12%;" />
+						<col span="1" style="width: 50%;" />
+					</colgroup>
+					<tr>
+						<td>Immunisations Evidence</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Immunisations_Evidence"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.immunisations_evidence"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>Care Plan</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Care_Plan"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.care_plan"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="vertical-align: middle; display: inline-block;">
+								<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.allergy.png" width="20px" height="20px" alt="allergy icon" />
+								Allergy Care Plan
+							</div>
+						</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Allergy_Care_Plan_Link"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.Allergy_Care_Plan_Link"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="vertical-align: middle; display: inline-block;">
+								<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.e.png" width="20px" height="20px" alt="epilepsy icon" />
+								Epilepsy Care Plan
+							</div>
+						</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]Epilepsy_Care_Plan_Link"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.Epilepsy_Care_Plan_Link"}'
+							/>
+						</td>
+					</tr>
+				</table>
+				<div style="text-align: left;">
+					<h3 style="vertical-align: middle; display: inline-block;">
+						<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+						Learning Support & EAL Documents
+					</h3>
+				</div>
+				<table border="0" cellspacing="0" cellpadding="4" class="linkDescList">
+					<colgroup>
+						<col span="1" style="width: 12%;" />
+						<col span="1" style="width: 50%;" />
+					</colgroup>
+					<tr>
+						<td>
+							<div style="vertical-align: middle; display: inline-block;">
+								<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.ls.png" width="20px" height="20px" alt="ls icon" />
+								Learning Support Alert
+							</div>
+						</td>
+						<td>
+							<input
+								type="hidden"
+								name="[students.U_SDS]ALERT_LS$formatnumeric=#########.#####"
+								value=""
+							/><input
+								type="checkbox"
+								name="[students.U_SDS]ALERT_LS$formatnumeric=#########.#####"
+								value="1"
+								data-validation='{"minValue":"0","maxlength":"1","maxValue":"1","isinteger":"true","type":"number","key":"students.u_sds.alert_ls"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>IEP Link</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]iep"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"300","type":"text","key":"students.u_sds.iep"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>TIAP Link</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]TIAP"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.tiap"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>LS Alert Text</td>
+						<td>
+							<textarea
+								name="[students.U_SDS]alert_ls_text"
+								value=""
+								rows="4"
+								cols="50"
+								data-validation='{"maxlength":"1000","type":"text","key":"students.u_sds.alert_ls_text"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="vertical-align: middle; display: inline-block;">
+								<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.eal.png" width="20px" height="20px" alt="eal icon" />
+								EAL Alert
+							</div>
+						</td>
+						<td>
+							<input
+								type="hidden"
+								name="[students.U_SDS]ALERT_EAL$formatnumeric=#########.#####"
+								value=""
+							/><input
+								type="checkbox"
+								name="[students.U_SDS]ALERT_EAL$formatnumeric=#########.#####"
+								value="1"
+								data-validation='{"minValue":"0","maxlength":"1","maxValue":"1","isinteger":"true","type":"number","key":"students.u_sds.alert_eal"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>EAL Documentation Link</td>
+						<td>
+							<input
+								type="text"
+								name="[students.U_SDS]EAL_Documentation"
+								value=""
+								size="100"
+								data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.EAL_Documentation"}'
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>EAL Alert Text</td>
+						<td>
+							<textarea
+								name="[students.U_SDS]Alert_EAL_Text"
+								value=""
+								rows="4"
+								cols="50"
+								data-validation='{"maxlength":"1000","type":"text","key":"students.u_sds.alert_eal_text"}'
+							/>
+						</td>
+					</tr>
+				</table>
+				<br />
+
+				<div style="padding-bottom: 20px;" class="button-row">
+					<input type="hidden" name="ac" value="prim" /><button
+						type="submit"
+						id="btnSubmit"
+						name="btnSubmit"
+					>
+						Submit
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<!-- end of content area -->
+		~[wc:admin_footer_frame_css]
+	</body>
+</html>

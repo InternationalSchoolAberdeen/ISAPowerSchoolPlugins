@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    description="ISA Student Document Storage" 
+    name="ISA SDS" 
+    version="1.47" 
+    xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd">
+
+    <publisher name="Gayle Veitch / Finn Lestrange">
+        <contact email="gayle.veitch@gmail.com"/>
+    </publisher>
+</plugin>

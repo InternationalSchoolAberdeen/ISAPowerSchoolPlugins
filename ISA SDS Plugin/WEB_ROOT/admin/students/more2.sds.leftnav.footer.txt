@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+$j(document).ready(function() {
+$j("ul#std_information").append("~[if.security.pagenone=/admin/students/sdslinks.html] [else]<li><a href='sdslinks.html?frn=~(frn)'>SDS Links</a></li>[/if]");
+$j("ul#std_information").append("~[if.security.pagenone=/admin/students/sdsupdate.html] [else]<li><a href='sdsupdate.html?frn=~(frn)'>SDS Update</a></li>[/if]");
+
+$j("ul#std_information li").sort(function(a, b)  {
+if($j(a).text() < $j(b).text()) return -1;
+if($j(a).text() > $j(b).text()) return 1;
+return 0;
+}).appendTo("ul#std_information");
+});
+
+</script>

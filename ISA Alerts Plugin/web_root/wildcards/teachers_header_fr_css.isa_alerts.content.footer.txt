@@ -1,0 +1,8 @@
+<script type="text/template" id="source">
+	~[wc:isa_alerts_teachers]
+</script>
+
+<script>
+	var template = $j("#source").html();
+	$j("form h1").append(template);
+</script>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SDS Links</title>
+<!-- required scripts -->
+	~[wc:commonscripts] 
+<!-- Required style sheets: screen.css, and print.css -->
+	<link href="/images/css/screen.css" rel="stylesheet" media="screen">
+	<link href="/images/css/print.css" rel="stylesheet" media="print">
+</head> 
+<body> 
+	~[wc:admin_header_frame_css]
+	<!-- breadcrumb start -->
+		<a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/students/home.html?selectstudent=nosearch" target="_top">Student Selection</a> &gt; SDS Links
+	<!-- breadcrumb end -->
+~[wc:admin_navigation_frame_css]
+<!-- start of main menu and content -->
+~[wc:title_student_begin_css]SDS Links ~[wc:title_student_end_css]
+
+<!-- start of content area -->
+	<p><i>Please use the links below to view student documents.  Please note that these documents should not be downloaded or printed.</i></p>
+	<div>
+	<h3 style="vertical-align: middle; display: inline-block;">
+		<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+		Admissions Documents
+	</h3>
+	</div>
+	~[if.~(u_sds.Previous_School_Report_1)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Previous_School_Report_1)" target="_blank">Previous School Report - 1</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Previous_School_Report_2)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Previous_School_Report_2)" target="_blank">Previous School Report - 2</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Previous_School_Report_3)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Previous_School_Report_3)" target="_blank">Previous School Report - 3</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.confidential_teacher_recommend)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.confidential_teacher_recommend)" target="_blank">Confidential Teacher Recommendation</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.map_test_report)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.map_test_report)" target="_blank">MAP Test Report</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.writing_sample)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.writing_sample)" target="_blank">Writing Sample</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.ls_entrance_tests)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.ls_entrance_tests)" target="_blank">LS Test Report</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.eal_entrance_tests)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.eal_entrance_tests)" target="_blank">EAL Test Report</a>
+		<br />
+	[/if]
+	<br />
+	<div style="text-align: left;">
+		<h3 style="vertical-align: middle; display: inline-block;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+			Identity Documents
+		</h3>
+	</div>
+	~[if.~(u_sds.passport_1)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.passport_1)" target="_blank">Passport - 1</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.passport_2)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.passport_2)" target="_blank">Passport - 2</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.biometric_residence_permit)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.biometric_residence_permit)" target="_blank">Biometric Residence Permit - 1</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.biometric_residence_permit_2)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.biometric_residence_permit_2)" target="_blank">Biometric Residence Permit - 2</a>
+		<br />
+	[/if]
+
+
+	<br />
+	<div style="text-align: left;">
+		<h3 style="vertical-align: middle; display: inline-block;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+			Medical Documents
+		</h3>
+	</div>
+	~[if.~(u_sds.immunisations_evidence)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.immunisations_evidence)" target="_blank">Immunisations Evidence</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.care_plan)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.care_plan)" target="_blank">Care Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Allergy_Care_Plan_Link)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Allergy_Care_Plan_Link)" target="_blank">Allergy Care Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Epilepsy_Care_Plan_Link)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Epilepsy_Care_Plan_Link)" target="_blank">Epilepsy Care Plan</a>
+		<br />
+	[/if]
+
+	<br />
+	<div style="text-align: left;">
+		<h3 style="vertical-align: middle; display: inline-block;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.document.png" width="20px" height="20px" alt="document icon" />
+			Learning Support & EAL Documents
+		</h3>
+	</div>
+	~[if.~(u_sds.iep)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.iep)" target="_blank">Individual Education Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.tiap)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.tiap)" target="_blank">Tailored Individual Accommodation Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.EAL_Documentation)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.EAL_Documentation)" target="_blank">EAL Documentation</a>
+		<br />
+	[/if]
+	<br />
+	<br />
+	<br />
+
+  <!-- end of content area -->
+	~[wc:admin_footer_frame_css]
+</body> 
+</html>

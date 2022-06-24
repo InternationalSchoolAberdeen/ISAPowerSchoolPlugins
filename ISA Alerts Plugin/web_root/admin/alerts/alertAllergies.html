@@ -1,0 +1,37 @@
+<div class="box-round" id="alert-medical~(studentfrn)">
+	<img class="alertImage" src="/images/isa_alert.allergy.png" width="20px" />
+	<div class="alertContent">
+		<h2
+			aria-label="~[text:psx.html.admin_alerts.medicalalertenhanced.health_alert]"
+			tabindex="0"
+		>
+			Allergy Alert
+		</h2>
+		~[if.~(StudentCoreFields.allergies)=""]
+		<p>
+			This student has allergies, however PowerSchool does not have any
+			information.
+		</p>
+		[else]
+		<div>
+			<p style="text-align: left">
+				This student has allergies.  Please see further information below.
+			</p>
+			<p style="text-align: center; padding-top: 10px">
+				<i>~(StudentCoreFields.allergies)</i>
+			</p>
+		</div>
+		[/if]
+		<br />
+
+		~[if.~(U_SDS.Allergy_Care_Plan_Link)=""]
+		<p>This student does not have an allergy care plan.</p>
+		[else]
+		<p>
+			<a href="~(U_SDS.Allergy_Care_Plan_Link)" target="_blank"
+				>Link to Students Allergy Care Plan</a
+			>
+		</p>
+		[/if]
+	</div>
+</div>

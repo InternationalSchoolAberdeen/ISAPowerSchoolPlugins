@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SDS Links</title>
+<!-- required scripts -->
+	~[wc:commonscripts] 
+<!-- Required style sheets: screen.css, and print.css -->
+	<link href="/images/css/screen.css" rel="stylesheet" media="screen">
+	<link href="/images/css/print.css" rel="stylesheet" media="print">
+<script type="text/javascript">
+	// Begin 
+	function formHandler(form){
+	var URL = document.navigation.page.options[document.navigation.page.selectedIndex].value;
+	window.location.href = URL;
+	}
+	// End
+</script>
+</head>
+<body>
+
+~[wc:teachers_header_fr_css]
+
+ <form name="navigation"><span class="account-photo">~[studenttitlephoto]</span>
+ <h1>SDS Links<span class="nav-teacher"><select name="page" size=1 onChange="javascript:formHandler()"><option value="">Select Screens</option><option value="">--------------------</option>~[x:teacherpages]</select></span>~[studentalert]</h1>
+<p>~(studentname) &nbsp; ~(grade_level) &nbsp; ~(student_number) &nbsp; &nbsp; ~(track) &nbsp; &nbsp; ~(studschoolabbr) &nbsp; &nbsp; ~[enrollmentstatus]</p></form>
+
+<!-- Start of SDS Links -->
+
+<div>
+	<p><i>Please use the links below to view student documents.  Please note that these documents should not be downloaded or printed.</i></p>
+	<h3> Admissions Documents </h3>
+	~[if.~(u_sds.Previous_School_Report_1)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Previous_School_Report_1)" target="_blank">Previous School Report - 1</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Previous_School_Report_2)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Previous_School_Report_2)" target="_blank">Previous School Report - 2</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Previous_School_Report_3)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Previous_School_Report_3)" target="_blank">Previous School Report - 3</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.confidential_teacher_recommend)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.confidential_teacher_recommend)" target="_blank">Confidential Teacher Recommendation</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.map_test_report)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.map_test_report)" target="_blank">MAP Test Report</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.writing_sample)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.writing_sample)" target="_blank">Writing Sample</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.ls_entrance_tests)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.ls_entrance_tests)" target="_blank">LS Test Report</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.eal_entrance_tests)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.eal_entrance_tests)" target="_blank">EAL Test Report</a>
+		<br />
+	[/if]
+	<br />
+	<h3> Identity Documents </h3>
+	~[if.~(u_sds.passport_1)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.passport_1)" target="_blank">Passport - 1</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.passport_2)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.passport_2)" target="_blank">Passport - 2</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.biometric_residence_permit)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.biometric_residence_permit)" target="_blank">Biometric Residence Permit - 1</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.biometric_residence_permit_2)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.biometric_residence_permit_2)" target="_blank">Biometric Residence Permit - 2</a>
+		<br />
+	[/if]
+
+
+	<br />
+	<h3> Medical Documents </h3>
+	~[if.~(u_sds.immunisations_evidence)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.immunisations_evidence)" target="_blank">Immunisations Evidence</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.care_plan)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.care_plan)" target="_blank">Care Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Allergy_Care_Plan_Link)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Allergy_Care_Plan_Link)" target="_blank">Allergy Care Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.Epilepsy_Care_Plan_Link)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.Epilepsy_Care_Plan_Link)" target="_blank">Epilepsy Care Plan</a>
+		<br />
+	[/if]
+
+	<br />
+	<h3> Learning Support & EAL Documents </h3>
+	~[if.~(u_sds.iep)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.iep)" target="_blank">Individual Education Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.tiap)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.tiap)" target="_blank">Tailored Individual Accommodation Plan</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.EAL_Documentation)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.EAL_Documentation)" target="_blank">EAL Documentation</a>
+		<br />
+	[/if]
+
+
+	~[if.security.inrole=12]
+	<br />
+
+<!-- Start of LS & EAL Update Page -->
+
+	<div>
+		<h2>Learning Support & EAL Documentation Update</h2>
+			<form
+				action="/teachers/studentpages/sdslinks.html?frn=~(frn)&recordSaved=1"
+				method="POST"
+			>
+				<!-- start of content and bounding box -->
+				<p><b>Please press the submit button at the bottom of the page to ensure that your changes are saved.</b></p>
+				<div class="box-round">
+					<table border="0" cellspacing="0" cellpadding="4" class="linkDescList">
+						<colgroup>
+							<col span="1" style="width: 12%;" />
+							<col span="1" style="width: 50%;" />
+						</colgroup>
+						<tr>
+							<td>
+								<div style="vertical-align: middle; display: inline-block;">
+									<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.ls.png" width="20px" height="20px" alt="ls icon" />
+									Learning Support Alert
+								</div>
+							</td>
+							<td>
+								<input
+									type="hidden"
+									name="[students.U_SDS]ALERT_LS$formatnumeric=#########.#####"
+									value=""
+								/><input
+									type="checkbox"
+									name="[students.U_SDS]ALERT_LS$formatnumeric=#########.#####"
+									value="1"
+									data-validation='{"minValue":"0","maxlength":"1","maxValue":"1","isinteger":"true","type":"number","key":"students.u_sds.alert_ls"}'
+								/>
+							</td>
+						</tr>
+						<tr>
+							<td>IEP Link</td>
+							<td>
+								<input
+									id="iep-link"
+									type="text"
+									name="[students.U_SDS]iep"
+									value=""
+									size="100"
+									data-validation='{"maxlength":"300","type":"text","key":"students.u_sds.iep"}'
+								/>
+								<a id="iep-link-test" style="padding-left: 10px;" href="~(U_SDS.iep)" target="_blank">Test Link</a>
+							</td>
+						</tr>
+						<tr>
+							<td>TIAP Link</td>
+							<td>
+								<input
+									id="tiap-link"
+									type="text"
+									name="[students.U_SDS]TIAP"
+									value=""
+									size="100"
+									data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.tiap"}'
+								/>
+								<a id="tiap-link-test" style="padding-left: 10px;" href="~(U_SDS.tiap)" target="_blank">Test Link</a>
+							</td>
+						</tr>
+						<tr>
+							<td>LS Alert Text</td>
+							<td>
+								<textarea
+									name="[students.U_SDS]alert_ls_text"
+									value=""
+									rows="4"
+									cols="50"
+									data-validation='{"maxlength":"1000","type":"text","key":"students.u_sds.alert_ls_text"}'
+								/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div style="vertical-align: middle; display: inline-block;">
+									<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.eal.png" width="20px" height="20px" alt="eal icon" />
+									EAL Alert
+								</div>
+							</td>
+							<td>
+								<input
+									type="hidden"
+									name="[students.U_SDS]ALERT_EAL$formatnumeric=#########.#####"
+									value=""
+								/><input
+									type="checkbox"
+									name="[students.U_SDS]ALERT_EAL$formatnumeric=#########.#####"
+									value="1"
+									data-validation='{"minValue":"0","maxlength":"1","maxValue":"1","isinteger":"true","type":"number","key":"students.u_sds.alert_eal"}'
+								/>
+							</td>
+						</tr>
+						<tr>
+							<td>EAL Documentation Link</td>
+							<td>
+								<input
+									id="eal-link"
+									type="text"
+									name="[students.U_SDS]EAL_Documentation"
+									value=""
+									size="100"
+									data-validation='{"maxlength":"200","type":"text","key":"students.u_sds.EAL_Documentation"}'
+								/>
+								<a id="eal-link-test" style="padding-left: 10px;" href="~(U_SDS.eal_documentation)" target="_blank">Test Link</a>
+							</td>
+						</tr>
+						<tr>
+							<td>EAL Alert Text</td>
+							<td>
+								<textarea
+									name="[students.U_SDS]Alert_EAL_Text"
+									value=""
+									rows="4"
+									cols="50"
+									data-validation='{"maxlength":"1000","type":"text","key":"students.u_sds.alert_eal_text"}'
+								/>
+							</td>
+						</tr>
+					</table>
+					<br />
+					<p style="text-align: left; display: inline-block; padding-left: 10px">Please paste in links, press<b>Submit</b>, and then use this <a title="Learning Support Alert" href="/teachers/alerts/alertLS.html?frn=~(frn)" class="dialogM">link</a> to test the Learning Support Alert, and this <a title="EAL Alert" href="/teachers/alerts/alertEAL.html?frn=~(frn)" class="dialogM">link</a> to test the EAL alert.</p>
+
+					<div style="font-size:large; text-align:left; padding-bottom: 20px;" class="button-row">
+						<input type="hidden" name="ac" value="webasmt" /><button
+							type="submit"
+							id="btnSubmit"
+							name="btnSubmit"
+						>
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+	</div>
+	[else]
+	[/if]
+	<br />
+	<br />
+	<br />
+</div>
+
+<script>
+	if (document.getElementById("iep-link").value === "") {
+		document.getElementById("iep-link-test").style.visibility = 'hidden';
+	}
+	if (document.getElementById("tiap-link").value === "") {
+		document.getElementById("tiap-link-test").style.visibility = 'hidden';
+	}
+	if (document.getElementById("eal-link").value === "") {
+		document.getElementById("eal-link-test").style.visibility = 'hidden';
+	}
+
+</script>
+
+<!-- end of content area -->
+~[wc:teachers_footer_fr_css]
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!-- *** BEGIN MEDICAL PAGE ADDITIONS*** -->
+
+<!-- ### Medical Conditions Checkboxes ### -->
+<script type="text/template" id="gp-info">
+	<tr>
+		<td class="bold">Registered Doctor<br>Surgery Information</td>
+		<td>
+			<table>
+		 	<colgroup>
+				<col span="1" style="width: 5%" />
+				<col span="1" style="width: 30%" />
+			</colgroup>
+			<tr>
+				<td>
+			 		Surgery Name:
+				</td>
+				<td>
+					<input style="width:550px;" type="text" name="[students.u_medical]GPSurgeryName" value="" style="margin-right: 20px;">
+				</td>
+			</tr>
+			<tr>
+				<td>
+			 		Address:
+				</td>
+				<td>
+					<input style="width:550px;" type="text" name="[students.u_medical]GPSurgeryAddress" value="" style="margin-right: 20px;">
+				</td>
+			</tr>
+		 </table>
+		</td>
+	</tr>
+</script>
+
+<script type="text/template" id="medication-permissions">
+	<tr>
+		<td class="bold">Medication Permissions</td>
+		<td>
+		 	<p style="vertical-align: middle; display: inline-block;">
+	        Antihistamine: <input style="vertical-align: middle; display: inline-block;" type="checkbox" name="[students.u_medical]AntihistaminePermission" value="" style="margin-right: 20px;">
+			</p>
+			<br />
+		 	<p style="vertical-align: middle; display: inline-block;">
+	        Antiseptic Cream: <input style="vertical-align: middle; display: inline-block;" type="checkbox" name="[students.u_medical]AntisepticCreamPermission" value="" style="margin-right: 20px;">
+			</p>
+	        <br />
+		 	<p style="vertical-align: middle; display: inline-block;">
+	        Ibuprofen: <input style="vertical-align: middle; display: inline-block;" type="checkbox" name="[students.u_medical]IbuprofenPermission" value="" style="margin-right: 20px;">
+			</p>
+	        <br />
+		 	<p style="vertical-align: middle; display: inline-block;">
+	        Paracetamol: <input style="vertical-align: middle; display: inline-block;" type="checkbox" name="[students.u_medical]ParacetamolPermission" value="" style="margin-right: 20px;">
+			</p>
+	        <br />
+		 	<p style="vertical-align: middle; display: inline-block;">
+	        No Medication Permitted: <input style="vertical-align: middle; display: inline-block;" type="checkbox" name="[students.u_medical]NoMedicationPermitted" value="" style="margin-right: 20px;">
+			</p>
+		</td>
+	</tr>
+</script>
+
+
+<script type="text/template" id="MedicalConditions">
+	 <tr>
+	     <td class="bold">Medical Conditions</td>
+	     <td>
+		 	<p style="display: inline-block; vertical-align: middle;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.a.png" width="20px" height="20px" alt="" />
+			Asthma: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]asthma" value="" style="margin-right: 20px;">
+	        Inhaler: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]AsthmaInhaler" value="" style="margin-right: 20px;">
+			</p>
+	         <br />
+		 	<p style="display: inline-block; vertical-align: middle;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.d.png" width="20px" height="20px" alt="" />
+	        Diabetic: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]Diabetes" value="" style="margin-right: 20px;">
+	        Diabetes Treatment:
+	<select id="diabetes.treatment.dropdown" name="[students.u_medical]DiabetesTreatment">
+		<option value=""></option>
+		<option value="Pump">Pump</option>
+		<option value="Injection">Injection</option>
+		<option value="Diet">Diet</option>
+	</select>
+			</p>
+	         <br />
+		 	<p style="display: inline-block; vertical-align: middle;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.e.png" width="20px" height="20px" alt="" />
+	         Epilepsy: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]Epilepsy" value="" style="margin-right: 20px;">
+	         Epilepsy Action Plan: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]epilepsyactionplan" value="" style="margin-right: 20px;">
+			</p>
+	        <br />
+		 	<p style="display: inline-block; vertical-align: middle;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.allergy.png" width="20px" height="20px" alt="" />
+	         Allergies: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]AllergiesYN" value="" style="margin-right: 20px;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.epipen.png" width="20px" height="20px" alt="" />
+	         Epi-Pen: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]Epipen" value="" style="margin-right: 20px;">
+	         Allergy Action Plan: <input style="vertical-align: middle;" type="checkbox" name="[students.u_medical]allergyactionplan" value="" style="margin-right: 20px;">
+			</p>
+	     </td>
+		</tr>
+		<tr>
+	     <td class="bold">Medical Documents <br> <p style="font-size: 12px;"><i>Please paste link, click Submit and then test the link.</i></p></td>
+	     <td>
+		 <table>
+		 	<colgroup>
+				<col span="1" style="width: 13%" />
+				<col span="1" style="width: 30%" />
+			</colgroup>
+			<tr>
+				<td>
+			 		Link to Care Plan: 
+				</td>
+				<td>
+					<input id="care-plan-link" style="width:550px;" type="text" name="[students.u_sds]Care_Plan" value="" style="margin-right: 20px;"> <a href="~(u_sds.Care_Plan)" style='padding-left: 10px;' id='care-plan-test-link' target='_blank'>Test Link</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+			 		Link to Allergy Action Plan: 
+				</td>
+				<td>
+					<input id="allergy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Allergy_Care_Plan_Link" value="" style="margin-right: 20px;"> <a href="~(u_sds.Allergy_Care_Plan_Link)" style='padding-left: 10px;' id='allergy-plan-test-link' target='_blank'>Test Link</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+			 		Link to Epilepsy Action Plan:
+				</td>
+				<td>
+					<input id="epilepsy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Epilepsy_Care_Plan_Link" value="" style="margin-right: 20px;"> <a href="~(u_sds.Epilepsy_Care_Plan_Link)" style='padding-left: 10px;' id='epilepsy-plan-test-link' target='_blank'>Test Link</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+			 		Link to Student's Immunization Evidence: 
+				</td>
+				<td>
+					<input id="immunization-evidence-link" style="width:550px;" type="text" name="[students.u_sds]Immunisations_Evidence" value="" style="margin-right: 20px;"> <a href="~(u_sds.Immunisations_Evidence)" style='padding-left: 10px;' id='imm-test-link' target='_blank'>Test Link</a>
+				</td>
+			</tr>
+		 </table>
+	     </td>
+		</tr>
+</script>
+
+<!-- This code inserts the extra form fields into the page -->
+<script>
+	require(["jquery"], function ($) {
+		var gptemplate = $j("#gp-info").html();
+		$j('td:contains("Special Medical")').closest("tr").before(gptemplate);
+	});
+</script>
+
+<script>
+	// These fields are named differently on live and test server so need to check which server plugin running on before injecting new elements
+	if (window.location.href.indexOf("powerschool") > -1) {
+		require(["jquery"], function ($) {
+			var medicationtemplate = $j("#medication-permissions").html();
+			$j('td.bold:contains("Allergies")').closest("tr").after(medicationtemplate);
+			$j('td.bold:contains("Allergies")').parent().children().eq(1).children().eq(0).attr("size","100");
+			$j('td.bold:contains("Allergies")').text("Allergy Notes");
+		});
+	} else if (window.location.href.indexOf("isa-pstest") > -1) {
+		require(["jquery"], function ($) {
+			var medicationtemplate = $j("#medication-permissions").html();
+			$j('td.bold:contains("Allergy Notes")').closest("tr").after(medicationtemplate);
+			$j('td:contains("Allergy Notes")').parent().children().eq(1).children().eq(0).attr("size","100");
+		});
+	};
+</script>
+
+<script>
+	require(["jquery"], function ($) {
+		var template2 = $j("#MedicalConditions").html();
+		$j('input[name$="allergies"]').closest("tr").before(template2);
+
+		// Update links -> hidden if the input box is blank
+		if (document.getElementById("care-plan-link").value === "") {
+			document.getElementById("care-plan-test-link").style.visibility = 'hidden';
+		}
+		if (document.getElementById("allergy-plan-link").value === "") {
+			document.getElementById("allergy-plan-test-link").style.visibility = 'hidden';
+		}
+		if (document.getElementById("epilepsy-plan-link").value === "") {
+			document.getElementById("epilepsy-plan-test-link").style.visibility = 'hidden';
+		}
+		if (document.getElementById("immunization-evidence-link").value === "") {
+			document.getElementById("imm-test-link").style.visibility = 'hidden';
+		}
+
+		$j('td.bold:contains("Allergy Notes")').parent().insertAfter($j('td.bold:contains("Medical Conditions")').parent());
+
+	});
+
+
+</script>
+
+<!-- Hides the legacy PowerSchool emergency contact rows -->
+
+<script>
+	$j("#page-heading").text("Emergency / Medical").css("padding-right", "10px");
+
+	$j('td:contains("Medical Alert Text")').parent().children().eq(1).children().eq(0).attr({"cols":"80", "rows":"7"});
+
+	$j('td:contains("Medical Alert Text")').parent().children('td, th').css("background-color", "white");
+
+	$j('td:contains("Alert Expires (date)")').parent().children('td, th').css("background-color", "#eeeeee");
+
+	$j("#emergency1").closest("tr").hide();
+	$j("#Emerg_1_Phone").closest("tr").hide();
+
+	$j("#emergency2").closest("tr").hide();
+	$j("#Emerg_2_Phone").closest("tr").hide();
+
+	$j("#emergency3").closest("tr").hide();
+	$j("#Emerg_3_Phone").closest("tr").hide();
+
+	$j('td:contains("Immunizations")').closest("tr").hide();
+
+	$j('td:contains("Doctor")').parent().children().eq(1).prop("id", "doctor-name-td");
+	$j('td:contains("Doctor")').parent().children().eq(2).children().prop("id", "doctor-phone");
+	$j("#doctor-phone").appendTo("#doctor-name-td");
+
+	$j('td:contains("Dentist")').parent().children().eq(1).prop("id", "dentist-name-td");
+	$j('td:contains("Dentist")').parent().children().eq(2).children().prop("id", "dentist-phone");
+	$j("#dentist-phone").appendTo("#dentist-name-td");
+
+	$j('<p style="display: inline-block;">Name: </p>').prependTo("#doctor-name-td");
+	$j('<p style="display: inline-block; padding-left: 10px">Phone: </p>').insertBefore("#doctor-phone");
+	$j('<p style="display: inline-block;">Name: </p>').prependTo("#dentist-name-td");
+	$j('<p style="display: inline-block; padding-left: 10px">Phone: </p>').insertBefore("#dentist-phone");
+
+</script>
+
+~[if.security.inrole=9]
+<p>
+	<i
+		>Updated ~[tlist_sql; select whenmodified , case when whomodified like '10%'
+		then 'SYSTEM' else whomodified end as userMod from u_medical where
+		studentsdcid = ~(rn) ] ~(1) by ~(2) [/tlist_sql]
+	</i>
+</p>
+[/if]
+
+<!-- *** END MEDICAL SCREEN UPDATES *** -->

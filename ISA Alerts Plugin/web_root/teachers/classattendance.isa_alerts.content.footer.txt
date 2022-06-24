@@ -1,0 +1,197 @@
+~[if#meeting1.~[gpv:pagetype]=meeting]
+<!-- If the user clicked into the chair, this script will run and add the student clickable alert icons to the student alert information box -->
+
+<!-- This code inserts the alert icons into the attendance sheet -->
+<script language="javascript">
+
+  // The variable created in this function will be an array containing the student and course info needed to add the alerts to the correct rows on the attendance screen
+  // The query pulls a student list for any students in the class who meet the alert criteria for Custom Alert 1
+
+  $j(function(){
+    //Function step 1
+
+    // u_def_ext_students5 contains the medical information that is then used to conditionally render the alerts
+    var asthmaRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_def_ext_students5 on u_def_ext_students5.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_def_ext_students5.asthma = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	  };
+
+    var diabetesRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_def_ext_students5 on u_def_ext_students5.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_def_ext_students5.diabetes = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	  };
+
+    var epilepsyRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_def_ext_students5 on u_def_ext_students5.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_def_ext_students5.epilepsy = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	  };
+
+    var allergiesRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_def_ext_students5 on u_def_ext_students5.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_def_ext_students5.allergiesyn = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	  };
+
+    var epiPenRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_def_ext_students5 on u_def_ext_students5.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_def_ext_students5.epipen = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	  };
+
+
+    // u_def_ext_students4 contains the consent information for students
+    var imageConsentRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_def_ext_students4 on u_def_ext_students4.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_def_ext_students4.images_sharing = 0
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	  };
+	
+	var documentRows = {
+		~[tlist_sql;
+			select cc.id, s.dcid
+			from cc cc
+			join students s on s.id = cc.studentid
+			left outer join u_sds on u_sds.studentsdcid = s.dcid
+			where cc.sectionid = ~(gpv.sectionid;sqlText)
+			and (
+				u_sds.previous_school_report_1 != '""' or
+				u_sds.Previous_School_Report_2 != '""' or
+				u_sds.Previous_School_Report_3 != '""' or
+				u_sds.Confidential_Teacher_Recommend != '""' or
+				u_sds.MAP_Test_Report != '""' or
+				u_sds.Writing_Sample != '""' or
+				u_sds.LS_Entrance_Tests != '""' or
+				u_sds.EAL_Entrance_Tests != '""' or
+				u_sds.Passport_1 != '""' or
+				u_sds.Passport_2 != '""' or
+				u_sds.Biometric_Residence_Permit != '""' or
+				u_sds.Biometric_Residence_Permit_2 != '""' or
+				u_sds.Immunisations_Evidence != '""' or
+				u_sds.Care_Plan != '""' or
+				u_sds.Allergy_Care_Plan_Link != '""' or
+				u_sds.Epilepsy_Care_Plan_Link != '""' or
+				u_sds.IEP != '""' or
+				u_sds.TIAP != '""' 
+			)	
+		]"~(1)":"~(2)",[/tlist_sql]"":""
+	};
+
+	var lsRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_sds on u_sds.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_sds.alert_ls = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	};
+
+	var ealRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_sds on u_sds.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_sds.alert_eal = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	};
+
+	var carePlanRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_sds on u_sds.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_sds.care_plan != '""'
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+
+	};
+
+
+    // Function step 2
+  	// The next function reads through the array created above and uses that information to add the alerts to the student alert information box
+
+    // jQuery Help Guide -> https://api.jquery.com/append/
+
+    $j.each(carePlanRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Medical Care Plan Alert" href="/teachers/alerts/alertCarePlan.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.med.png" border=0 width="20" height="20" title="Medical Care Plan Alert"/></a>');
+    });
+    $j.each(asthmaRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Asthma Alert" href="/teachers/alerts/alertAsthma.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.a.png" border=0 width="20" height="20" title="Asthma"/></a>');
+    });
+    $j.each(diabetesRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Diabetes Alert" href="/teachers/alerts/alertDiabetes.html?frn=001'+ studcid +'" class="dialogM" ><img src="/images/isa_alert.d.png" border=0 width="20" height="20" title="Diabetes" /></a>');
+    });
+    $j.each(epilepsyRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Epilepsy Alert" href="/teachers/alerts/alertEpilepsy.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.e.png" border=0 width="20" height="20" title="Epilepsy" /></a>');
+    });
+    $j.each(allergiesRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Allergy Alert" href="/teachers/alerts/alertAllergies.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.allergy.png" border=0 width="20" height="20" title="Allergies" /></a>');
+    });
+    $j.each(epiPenRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Epi-Pen Alert" href="/teachers/alerts/alertEpipen.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.epipen.png" border=0 width="20" height="20" title="Epi-Pen" /></a>');
+    });
+    $j.each(lsRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Learning Support Alert" href="/teachers/alerts/alertLS.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.ls.png" border=0 width="20" height="20" title="Learning Support Alert"/></a>');
+    });
+    $j.each(ealRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="EAL Alert" href="/teachers/alerts/alertEAL.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.eal.png" border=0 width="20" height="20" title="EAL Alert"/></a>');
+    });
+    $j.each(imageConsentRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Image Consent Alert" href="/teachers/alerts/alertImageConsent.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.camera.png" border=0 width="20" height="20" title="Image Consent Alert" /></a>');
+    });
+    $j.each(documentRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Document Alert" href="/teachers/alerts/alertSDS.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="Document Alert" /></a>');
+    });
+
+    //Function step 3
+    //Add the dialog to the alerts since dialogM gets called on page load for the out-of-the-box alerts
+    $j('a.dialogAlert').live('click',psDialog);
+  });
+</script>
+[/if#meeting1]

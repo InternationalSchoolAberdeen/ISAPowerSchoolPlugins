@@ -1,0 +1,89 @@
+<div id="ISAalerts">
+	~[if.~(U_SDS.Care_Plan)=""]
+	[else]
+		<a title="Medical Care Plan Alert" href="/admin/alerts/alertCarePlan.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.med.png" border=0 width="20" height="20" title="Medical Care Plan Alert"/></a>
+	[/if]
+
+	~([students.U_MEDICAL]asthma;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Asthma Alert" href="/admin/alerts/alertAsthma.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.a.png" border=0 width="20" height="20" title="Asthma Alert"/></a>)
+	~([students.U_MEDICAL]Diabetes;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Diabetes Alert" href="/admin/alerts/alertDiabetes.html?frn=~(frn)" class="dialogM" ><img src="/images/isa_alert.d.png" border=0 width="20" height="20" title="Diabetes Alert" /></a>)
+	~([students.U_MEDICAL]Epilepsy;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Epilepsy Alert" href="/admin/alerts/alertEpilepsy.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.e.png" border=0 width="20" height="20" title="Epilepsy Alert" /></a>)
+	~([students.U_MEDICAL]AllergiesYN;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Allergy Alert" href="/admin/alerts/alertAllergies.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.allergy.png" border=0 width="20" height="20" title="Allergy Alert" /></a>)
+	~([students.U_MEDICAL]Epipen;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Epi-Pen Alert" href="/admin/alerts/alertEpipen.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.epipen.png" border=0 width="20" height="20" title="Epi-Pen Alert" /></a>)
+	~([students.U_SDS]Alert_LS;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Learning Support Alert" href="/admin/alerts/alertLS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.ls.png" border=0 width="20" height="20" title="Learning Support Alert"/></a>)
+	~([students.U_SDS]Alert_EAL;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="EAL Alert" href="/admin/alerts/alertEAL.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.eal.png" border=0 width="20" height="20" title="EAL Alert"/></a>)
+	~([students.U_CONSENT]Images_Sharing;if.fieldvalue.1.then=;if.fieldvalue.0.then=<a title="Image Consent Alert" href="/admin/alerts/alertImageConsent.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.camera.png" border=0 width="20" height="20" title="Image Consent Alert" /></a>)
+
+	~[if#pr1.~(u_sds.Previous_School_Report_1)=""]
+		~[if#pr2.~(u_sds.Previous_School_Report_2)=""]
+			~[if#pr3.~(u_sds.Previous_School_Report_3)=""]
+				~[if#ctr.~(u_sds.Confidential_Teacher_Recommend)=""]
+					~[if#map.~(u_sds.MAP_Test_Report)=""]
+						~[if#ws.~(u_sds.Writing_Sample)=""]
+							~[if#ls.~(u_sds.LS_Entrance_Tests)=""]
+								~[if#eal.~(u_sds.EAL_Entrance_Tests)=""]
+									~[if#pp1.~(u_sds.Passport_1)=""]
+										~[if#pp2.~(u_sds.Passport_2)=""]
+											~[if#brp1.~(u_sds.Biometric_Residence_Permit)=""]
+												~[if#brp2.~(u_sds.Biometric_Residence_Permit_2)=""]
+													~[if#imm.~(u_sds.Immunisations_Evidence)=""]
+														~[if#c.~(u_sds.Care_Plan)=""]
+															~[if#ac.~(u_sds.Allergy_Care_Plan_Link)=""]
+																~[if#ec.~(u_sds.Epilepsy_Care_Plan_Link)=""]
+																	~[if#iep.~(u_sds.iep)=""]
+																		~[if#tiap.~(u_sds.TIAP)=""]
+																		[else#tiap]
+																			<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+																		[/if#tiap]
+																	[else#iep]
+																		<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+																	[/if#iep]	
+																[else#ec]
+																	<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+																[/if#ec]
+															[else#ac]
+																<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+															[/if#ac]
+														[else#c]
+															<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+														[/if#c]
+													[else#imm]
+														<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+													[/if#imm]
+												[else#brp2]
+													<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+												[/if#brp2]
+											[else#brp1]
+												<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+											[/if#brp1]	
+										[else#pp2]
+											<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+										[/if#pp2]
+									[else#pp1]
+										<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+									[/if#pp1]
+								[else#eal]
+									<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+								[/if#eal]
+							[else#ls]
+								<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+							[/if#ls]
+						[else#ws]
+							<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+						[/if#ws]
+					[else#map]
+						<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+					[/if#map]
+				[else#ctr]
+					<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+				[/if#ctr]
+			[else#pr3]
+				<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+			[/if#pr3]
+		[else#pr2]
+			<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+		[/if#pr2]
+	[else#pr1]
+		<a title="SDS Document Alert" href="/admin/alerts/alertSDS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="SDS Document Alert" /></a>
+	[/if#pr1]
+
+</div>
