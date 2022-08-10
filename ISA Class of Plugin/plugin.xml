@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    description="ISA Class of. Plugin" 
+    name="ISA Class Of" 
+    version="0.1" 
+    xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd">
+
+    <publisher name="Finn Lestrange">
+        <contact email="finn.lestrange@gmail.com"/>
+    </publisher>
+</plugin>
