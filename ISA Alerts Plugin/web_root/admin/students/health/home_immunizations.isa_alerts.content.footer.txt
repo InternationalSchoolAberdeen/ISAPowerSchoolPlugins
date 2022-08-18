@@ -1,0 +1,19 @@
+<!-- *** BEGIN IMMUNIZATION PAGE ADDITIONS *** -->
+
+<script type="template/text" id="imm-link-template">
+    <p id="imm-container"> - &nbsp; <a style="display: inline-block" id="imm-evidence" href="~(u_sds.Immunisations_Evidence)" target="_blank">Immunization Evidence</a>
+    </p>
+</script>
+
+<script>
+    require(["jquery"], function ($) {
+		var template = $j("#imm-link-template").html();
+		$j("h2:contains('Immunizations')").append(template);
+
+		// Update links -> hidden if the input box is blank
+		if (document.getElementById("imm-evidence").value === "") {
+			document.getElementById("imm-container").style.visibility = 'hidden';
+		}
+
+	});
+</script>

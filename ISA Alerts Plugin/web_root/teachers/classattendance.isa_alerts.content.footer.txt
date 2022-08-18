@@ -153,13 +153,27 @@
 	};
 
 
+	var noMedicationRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_sds on u_sds.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and U_MEDICAL.NoMedicationPermitted = 1
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+
+	};
+
+
     // Function step 2
   	// The next function reads through the array created above and uses that information to add the alerts to the student alert information box
 
     // jQuery Help Guide -> https://api.jquery.com/append/
 
     $j.each(carePlanRows, function(ccid, studcid) {
-	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Medical Care Plan Alert" href="/teachers/alerts/alertCarePlan.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.med.png" border=0 width="20" height="20" title="Medical Care Plan Alert"/></a>');
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Other Medical Care Plan Alert" href="/teachers/alerts/alertCarePlan.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.med.png" border=0 width="20" height="20" title="Medical Care Plan Alert"/></a>');
     });
     $j.each(asthmaRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Asthma Alert" href="/teachers/alerts/alertAsthma.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.a.png" border=0 width="20" height="20" title="Asthma"/></a>');
@@ -175,6 +189,9 @@
     });
     $j.each(epiPenRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Epi-Pen Alert" href="/teachers/alerts/alertEpipen.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.epipen.png" border=0 width="20" height="20" title="Epi-Pen" /></a>');
+    });
+    $j.each(noMedicationRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="No Medication Alert" href="/teachers/alerts/alertMedication.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.nomedication.png" border=0 width="20" height="20" title="No Medication Alert" /></a>');
     });
     $j.each(lsRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Learning Support Alert" href="/teachers/alerts/alertLS.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.ls.png" border=0 width="20" height="20" title="Learning Support Alert"/></a>');

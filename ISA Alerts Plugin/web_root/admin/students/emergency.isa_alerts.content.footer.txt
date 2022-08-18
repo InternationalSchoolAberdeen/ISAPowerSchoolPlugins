@@ -106,18 +106,32 @@
 			</colgroup>
 			<tr>
 				<td>
-			 		Link to Care Plan: 
+			 		Link to Allergy Action Plan: 
 				</td>
 				<td>
-					<input id="care-plan-link" style="width:550px;" type="text" name="[students.u_sds]Care_Plan" value="" style="margin-right: 20px;"> <a href="~(u_sds.Care_Plan)" style='padding-left: 10px;' id='care-plan-test-link' target='_blank'>Test Link</a>
+					<input id="allergy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Allergy_Care_Plan_Link" value="" style="margin-right: 20px;"> 
+					<input id="allergy-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.ALLERGYCAREPLANEXP"}' name="[students.u_medical]ALLERGYCAREPLANEXP" value="" style="margin-right: 20px;" />
+					<a href="~(u_sds.Allergy_Care_Plan_Link)" style='padding-left: 10px;' id='allergy-plan-test-link' target='_blank'>Test Link</a>
 				</td>
 			</tr>
 			<tr>
 				<td>
-			 		Link to Allergy Action Plan: 
+			 		Link to Asthma Care Plan: 
 				</td>
 				<td>
-					<input id="allergy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Allergy_Care_Plan_Link" value="" style="margin-right: 20px;"> <a href="~(u_sds.Allergy_Care_Plan_Link)" style='padding-left: 10px;' id='allergy-plan-test-link' target='_blank'>Test Link</a>
+					<input id="asthma-plan-link" style="width:550px;" type="text" name="[students.u_sds]Asthma_Care_Plan_Link" value="" style="margin-right: 20px;"> 
+					<input id="asthma-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.ASTHMACAREPLANEXP"}' name="[students.u_medical]ASTHMACAREPLANEXP" value="" style="margin-right: 20px;" />
+					<a href="~(u_sds.Asthma_Care_Plan_Link)" style='padding-left: 10px;' id='asthma-plan-test-link' target='_blank'>Test Link</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+			 		Link to Diabetes Care Plan: 
+				</td>
+				<td>
+					<input id="diabetes-plan-link" style="width:550px;" type="text" name="[students.u_sds]Diabetes_Care_Plan_Link" value="" style="margin-right: 20px;"> 
+					<input id="diabetes-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.DIABETESCAREPLANEXP"}' name="[students.u_medical]DIABETESCAREPLANEXP" value="" style="margin-right: 20px;" />
+					<a href="~(u_sds.Diabetes_Care_Plan_Link)" style='padding-left: 10px;' id='diabetes-plan-test-link' target='_blank'>Test Link</a>
 				</td>
 			</tr>
 			<tr>
@@ -125,7 +139,19 @@
 			 		Link to Epilepsy Action Plan:
 				</td>
 				<td>
-					<input id="epilepsy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Epilepsy_Care_Plan_Link" value="" style="margin-right: 20px;"> <a href="~(u_sds.Epilepsy_Care_Plan_Link)" style='padding-left: 10px;' id='epilepsy-plan-test-link' target='_blank'>Test Link</a>
+					<input id="epilepsy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Epilepsy_Care_Plan_Link" value="" style="margin-right: 20px;"> 
+					<input id="epilepsy-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.EPILEPSYCAREPLANEXP"}' name="[students.u_medical]EPILEPSYCAREPLANEXP" value="" style="margin-right: 20px;" />
+					<a href="~(u_sds.Epilepsy_Care_Plan_Link)" style='padding-left: 10px;' id='epilepsy-plan-test-link' target='_blank'>Test Link</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+			 		Link to Other Care Plan: 
+				</td>
+				<td>
+					<input id="care-plan-link" style="width:550px;" type="text" name="[students.u_sds]Care_Plan" value="" style="margin-right: 20px;">
+					<input id="care-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.CAREPLANEXP"}' name="[students.u_medical]CAREPLANEXP" value="" style="margin-right: 20px;" />
+					<a href="~(u_sds.Care_Plan)" style='padding-left: 10px;' id='care-plan-test-link' target='_blank'>Test Link</a>
 				</td>
 			</tr>
 			<tr>
@@ -184,6 +210,12 @@
 		}
 		if (document.getElementById("immunization-evidence-link").value === "") {
 			document.getElementById("imm-test-link").style.visibility = 'hidden';
+		}
+		if (document.getElementById("diabetes-plan-link").value === "") {
+			document.getElementById("diabetes-plan-test-link").style.visibility = 'hidden';
+		}
+		if (document.getElementById("asthma-plan-link").value === "") {
+			document.getElementById("asthma-plan-test-link").style.visibility = 'hidden';
 		}
 
 		$j('td.bold:contains("Allergy Notes")').parent().insertAfter($j('td.bold:contains("Medical Conditions")').parent());

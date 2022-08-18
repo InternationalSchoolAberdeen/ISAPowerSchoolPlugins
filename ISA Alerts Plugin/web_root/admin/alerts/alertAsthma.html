@@ -3,5 +3,16 @@
     <div class="alertContent">
         <h2 aria-label="~[text:psx.html.admin_alerts.medicalalertenhanced.health_alert]" tabindex="0">Asthma Alert</h2>
         <p tabindex="0" data-ng-style="{'margin-left':'0'}" class="overflowwrapbreak">~([students.U_MEDICAL]asthmaInhaler;if.fieldvalue.0.then=<p>This student has asthma, but does not carry an inhaler.</p>;if.fieldvalue.1.then=<p>This student has asthma and carries an inhaler.</p>) </p>
+
+        
+		~[if.~(U_SDS.Asthma_care_plan_link)=""]
+		<p>This student does not have an asthma care plan.</p>
+		[else]
+		<p>
+			<a href="~(U_SDS.Asthma_care_plan_link)" target="_blank"
+				>Link to Students Asthma Care Plan</a
+			>
+		</p>
+		[/if]
     </div>
 </div>

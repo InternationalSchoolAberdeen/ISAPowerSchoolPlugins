@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
 	name="ISA Alerts"
-	version="1.84"
+	version="1.88"
 	description="Adds alerts to admin and teacher portals, and adds existing custom medical fields to Emergency/Medical student page; with thanks to Jerome Ohnui for assistance based on the TSD Medical Alerts Plugin">
 	
 	<publisher name="Gayle Veitch / Finn Lestrange">

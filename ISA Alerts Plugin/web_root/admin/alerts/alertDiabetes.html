@@ -8,6 +8,17 @@
             [else]
                 <p>This student has diabetes and their treatment is: ~(U_MEDICAL.DiabetesTreatment)</p>
             [/if]
+            <br />
+
+            ~[if.~(U_SDS.Diabetes_care_plan_link)=""]
+            <p>This student does not have a diabetes care plan.</p>
+            [else]
+            <p>
+                <a href="~(U_SDS.Diabetes_Care_Plan_Link)" target="_blank"
+                    >Link to Students Diabetes Care Plan</a
+                >
+            </p>
+            [/if]
         </p>
     </div>
 </div>
