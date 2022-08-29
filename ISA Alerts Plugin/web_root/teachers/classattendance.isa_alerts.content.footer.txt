@@ -158,10 +158,10 @@
 		    select cc.id, s.dcid
 		    from cc cc
 		    join students s on s.id = cc.studentid
-        left outer join u_sds on u_sds.studentsdcid = s.dcid
+        left outer join u_def_ext_students5 on u_def_ext_students5.studentsdcid = s.dcid
 		    where cc.sectionid = ~(gpv.sectionid;sqlText)
 		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
-          and U_MEDICAL.NoMedicationPermitted = 1
+          and u_def_ext_students5.NoMedicationPermitted = 1
 		    ]"~(1)":"~(2)",[/tlist_sql]"":""
 
 	};

@@ -93,6 +93,7 @@ $j.each(carePlanRows, function(ccid, studcid) {
 
 ## 📚 Changelog
 
+- `v1.89`: More misc updates to the medical / emergency page
 - `v1.86`: Added new links for plans and also for expiry dates
 - `v1.85`: Added in new alert for no medication consent.
 - `v1.84`: Added new care plan alert to PowerTeacher and Attendance Screens

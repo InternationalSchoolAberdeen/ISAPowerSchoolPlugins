@@ -51,13 +51,19 @@
 	        Paracetamol: <input style="vertical-align: middle; display: inline-block;" type="checkbox" name="[students.u_medical]ParacetamolPermission" value="" style="margin-right: 20px;">
 			</p>
 	        <br />
-		 	<p style="vertical-align: middle; display: inline-block;">
+		 	<p style="display: inline-block; vertical-align: middle;">
+			<img style="vertical-align: middle; padding-right: 5px;" src="/images/isa_alert.nomedication.png" width="20px" height="20px" alt="" />
 	        No Medication Permitted: <input style="vertical-align: middle; display: inline-block;" type="checkbox" name="[students.u_medical]NoMedicationPermitted" value="" style="margin-right: 20px;">
 			</p>
 		</td>
 	</tr>
+	<tr>
+		<td class="bold">Medical History <br> <p style="font-size: 12px;"><i>From MED2 Form.</i></p></td>
+		<td>
+			<textarea rows="7" cols="80" name="[students.u_medical]MedicalHistory"></textarea>
+		</td>
+	</tr>
 </script>
-
 
 <script type="text/template" id="MedicalConditions">
 	 <tr>
@@ -111,7 +117,7 @@
 				<td>
 					<input id="allergy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Allergy_Care_Plan_Link" value="" style="margin-right: 20px;"> 
 					<input id="allergy-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.ALLERGYCAREPLANEXP"}' name="[students.u_medical]ALLERGYCAREPLANEXP" value="" style="margin-right: 20px;" />
-					<a href="~(u_sds.Allergy_Care_Plan_Link)" style='padding-left: 10px;' id='allergy-plan-test-link' target='_blank'>Test Link</a>
+					<a href="~(u_sds.Allergy_Care_Plan_Link)" style='padding-left: 10px;' id='allergy-plan-test-link' target='_blank'>Go to document.</a>
 				</td>
 			</tr>
 			<tr>
@@ -121,7 +127,7 @@
 				<td>
 					<input id="asthma-plan-link" style="width:550px;" type="text" name="[students.u_sds]Asthma_Care_Plan_Link" value="" style="margin-right: 20px;"> 
 					<input id="asthma-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.ASTHMACAREPLANEXP"}' name="[students.u_medical]ASTHMACAREPLANEXP" value="" style="margin-right: 20px;" />
-					<a href="~(u_sds.Asthma_Care_Plan_Link)" style='padding-left: 10px;' id='asthma-plan-test-link' target='_blank'>Test Link</a>
+					<a href="~(u_sds.Asthma_Care_Plan_Link)" style='padding-left: 10px;' id='asthma-plan-test-link' target='_blank'>Go to document.</a>
 				</td>
 			</tr>
 			<tr>
@@ -131,7 +137,7 @@
 				<td>
 					<input id="diabetes-plan-link" style="width:550px;" type="text" name="[students.u_sds]Diabetes_Care_Plan_Link" value="" style="margin-right: 20px;"> 
 					<input id="diabetes-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.DIABETESCAREPLANEXP"}' name="[students.u_medical]DIABETESCAREPLANEXP" value="" style="margin-right: 20px;" />
-					<a href="~(u_sds.Diabetes_Care_Plan_Link)" style='padding-left: 10px;' id='diabetes-plan-test-link' target='_blank'>Test Link</a>
+					<a href="~(u_sds.Diabetes_Care_Plan_Link)" style='padding-left: 10px;' id='diabetes-plan-test-link' target='_blank'>Go to document.</a>
 				</td>
 			</tr>
 			<tr>
@@ -141,7 +147,7 @@
 				<td>
 					<input id="epilepsy-plan-link" style="width:550px;" type="text" name="[students.u_sds]Epilepsy_Care_Plan_Link" value="" style="margin-right: 20px;"> 
 					<input id="epilepsy-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.EPILEPSYCAREPLANEXP"}' name="[students.u_medical]EPILEPSYCAREPLANEXP" value="" style="margin-right: 20px;" />
-					<a href="~(u_sds.Epilepsy_Care_Plan_Link)" style='padding-left: 10px;' id='epilepsy-plan-test-link' target='_blank'>Test Link</a>
+					<a href="~(u_sds.Epilepsy_Care_Plan_Link)" style='padding-left: 10px;' id='epilepsy-plan-test-link' target='_blank'>Go to document.</a>
 				</td>
 			</tr>
 			<tr>
@@ -151,7 +157,7 @@
 				<td>
 					<input id="care-plan-link" style="width:550px;" type="text" name="[students.u_sds]Care_Plan" value="" style="margin-right: 20px;">
 					<input id="care-plan-exp" style="width:100px" type="text" data-validation='{"type":"date","key":"students.u_medical.CAREPLANEXP"}' name="[students.u_medical]CAREPLANEXP" value="" style="margin-right: 20px;" />
-					<a href="~(u_sds.Care_Plan)" style='padding-left: 10px;' id='care-plan-test-link' target='_blank'>Test Link</a>
+					<a href="~(u_sds.Care_Plan)" style='padding-left: 10px;' id='care-plan-test-link' target='_blank'>Go to document.</a>
 				</td>
 			</tr>
 			<tr>
@@ -159,7 +165,7 @@
 			 		Link to Student's Immunization Evidence: 
 				</td>
 				<td>
-					<input id="immunization-evidence-link" style="width:550px;" type="text" name="[students.u_sds]Immunisations_Evidence" value="" style="margin-right: 20px;"> <a href="~(u_sds.Immunisations_Evidence)" style='padding-left: 10px;' id='imm-test-link' target='_blank'>Test Link</a>
+					<input id="immunization-evidence-link" style="width:550px;" type="text" name="[students.u_sds]Immunisations_Evidence" value="" style="margin-right: 20px;"> <a href="~(u_sds.Immunisations_Evidence)" style='padding-left: 10px;' id='imm-test-link' target='_blank'>Go to document.</a>
 				</td>
 			</tr>
 		 </table>
@@ -232,9 +238,9 @@
 
 	$j('td:contains("Medical Alert Text")').parent().children().eq(1).children().eq(0).attr({"cols":"80", "rows":"7"});
 
-	$j('td:contains("Medical Alert Text")').parent().children('td, th').css("background-color", "white");
+	$j('td:contains("Medical Alert Text")').parent().children('td, th').css("background-color", "#eeeeee");
 
-	$j('td:contains("Alert Expires (date)")').parent().children('td, th').css("background-color", "#eeeeee");
+	$j('td:contains("Alert Expires (date)")').parent().children('td, th').css("background-color", "white");
 
 	$j("#emergency1").closest("tr").hide();
 	$j("#Emerg_1_Phone").closest("tr").hide();
