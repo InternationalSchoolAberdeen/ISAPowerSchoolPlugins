@@ -1,0 +1,35 @@
+<queries>
+    <query name="tech.finnlestrange.sdsexport.sds.exportquery"
+    coreTable="students" flattened="true">
+        <description>Exports a list of all student numbers, what their graduating class is and a list of emails for their teachers.</description>
+       <columns>
+            <column column="students.student_number">student_number</column>
+            <column column="students.lastfirst">classof</column>
+            <column column="students.lastfirst">emails</column>
+        </columns> 
+        <sql>
+            <![CDATA[
+            select
+                students.student_number,
+                'Class of ' || studentcorefields.graduation_year as classof,
+                listagg (distinct teachers.email_addr, ',') within group (order by teachers.email_addr) as emails
+            from
+                cc
+            join
+                students on cc.studentid = students.id
+            join
+                sections on cc.sectionid = sections.id
+            join
+                courses on sections.course_number = courses.course_number
+            join
+                teachers on sections.teacher = teachers.id
+            join
+                studentcorefields on students.id = studentcorefields.studentsdcid
+            where 
+                students.grade_level in (12,11,10,9,8,7,6,5,4,3,2,1,0,-1,-2) and cc.termid > 3199
+            group by
+                students.student_number, studentcorefields.graduation_year
+            ]]>
+        </sql>
+    </query>
+</queries>

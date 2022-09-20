@@ -3,21 +3,23 @@
     <div class="alertContent">
         <h2 aria-label="~[text:psx.html.admin_alerts.medicalalertenhanced.health_alert]" tabindex="0">Learning Support Alert</h2>
         <p>
-            This student has Learning Support, below is supporting information:<br>
+            Please see below for any supporting information or documents.<br>
         </p>
 		<p style="text-align: center; padding-top: 10px">
            <i>~(U_SDS.Alert_LS_Text)</i> <br>
         </p>
         <br />
+        <div style="text-align: center;">
         ~[if.~(U_SDS.IEP)=""]
         [else]
-            <a style="padding-left: 10px" href="~(U_SDS.IEP)">View the students IEP</a>
+            <a style="padding-left: 10px; text-align: center;" href="~(U_SDS.IEP)">View the student's IEP</a>
         [/if]
 		<br />
         ~[if.~(U_SDS.TIAP)=""]
         [else]
-            <a style="padding-left: 10px" href="~(U_SDS.TIAP)">View the students TIAP</a>
+            <a style="padding-left: 10px; text-align: center;" href="~(U_SDS.TIAP)">View the student's TIAP</a>
         [/if]
+        </div>
 		<br />
     </div>
 </div>

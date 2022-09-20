@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
+ name="ISA SDS PowerQuery Export"
+ version="1.0"
+ description="PowerQuery to export data in the format required for the Gooogle Scripts to modify permissions on the SDS.">
+	<publisher name="Finn Lestrange - ISA">
+		<contact email="finn.lestrange@gmail.com"/>
+	</publisher>
+</plugin>
