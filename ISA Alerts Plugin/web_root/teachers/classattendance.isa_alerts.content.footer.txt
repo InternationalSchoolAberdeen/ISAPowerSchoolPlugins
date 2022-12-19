@@ -166,6 +166,18 @@
 
 	};
 
+	var childPlanRows = {
+		  ~[tlist_sql;
+		    select cc.id, s.dcid
+		    from cc cc
+		    join students s on s.id = cc.studentid
+        left outer join u_sds on u_sds.studentsdcid = s.dcid
+		    where cc.sectionid = ~(gpv.sectionid;sqlText)
+		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
+          and u_sds.child_plan != '""' 
+		    ]"~(1)":"~(2)",[/tlist_sql]"":""
+	};
+
 
     // Function step 2
   	// The next function reads through the array created above and uses that information to add the alerts to the student alert information box
@@ -201,6 +213,9 @@
     });
     $j.each(imageConsentRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Image Consent Alert" href="/teachers/alerts/alertImageConsent.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.camera.png" border=0 width="20" height="20" title="Image Consent Alert" /></a>');
+    });
+    $j.each(childPlanRows, function(ccid, studcid) {
+	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Child's Plan" href="/teachers/alerts/alertChildPlan.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.childPlan.png" border=0 width="20" height="20" title="Child's Plan Alert" /></a>');
     });
     $j.each(documentRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Document Alert" href="/teachers/alerts/alertSDS.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="Document Alert" /></a>');

@@ -12,6 +12,7 @@
 	~([students.U_SDS]Alert_LS;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Learning Support Alert" href="/teachers/alerts/alertLS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.ls.png" border=0 width="20" height="20" title="Learning Support Alert"/></a>)
 	~([students.U_SDS]Alert_EAL;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="EAL Alert" href="/teachers/alerts/alertEAL.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.eal.png" border=0 width="20" height="20" title="EAL Alert"/></a>)
 	~([students.U_CONSENT]Images_Sharing;if.fieldvalue.1.then=;if.fieldvalue.0.then=<a title="Image Consent Alert" href="/teachers/alerts/alertImageConsent.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.camera.png" border=0 width="20" height="20" title="Image Consent Alert" /></a>)
+	~([students.U_SDS]Alert_Child_Plan;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Child's Plan Alert" href="/teachers/alerts/alertChildPlan.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.childPlan.png" border=0 width="20" height="20" title="Child's Plan Alert" /></a>)
 
 	~[if#pr1.~(u_sds.Previous_School_Report_1)=""]
 		~[if#pr2.~(u_sds.Previous_School_Report_2)=""]

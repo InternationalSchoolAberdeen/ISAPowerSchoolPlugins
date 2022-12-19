@@ -51,7 +51,12 @@
 	[/if]
 	~[if.~(u_sds.map_test_report)=""]
 	[else]
-		<a style="padding-left: 30px" href="~(u_sds.map_test_report)" target="_blank">MAP Test Report</a>
+		<a style="padding-left: 30px" href="~(u_sds.map_test_report)" target="_blank">MAP 1</a>
+		<br />
+	[/if]
+	~[if.~(u_sds.map_test_report_2)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.map_test_report_2)" target="_blank">MAP 2</a>
 		<br />
 	[/if]
 	~[if.~(u_sds.writing_sample)=""]
@@ -115,6 +120,7 @@
 		<a style="padding-left: 30px" href="~(u_sds.Epilepsy_Care_Plan_Link)" target="_blank">Epilepsy Care Plan</a>
 		<br />
 	[/if]
+
 
 	<br />
 	<h3> Learning Support & EAL Documents </h3>
@@ -278,6 +284,46 @@
 	</div>
 	[else]
 	[/if]
+    <br />
+    <h3> Preschool Observations </h3>
+    ~[if.~(u_sds.PS_OBS_1)=""]
+    [else]
+        <a style="padding-left: 30px" href="~(u_sds.PS_OBS_1)" target="_blank">Observations 1</a>
+        <br />
+    [/if]
+    ~[if.~(u_sds.PS_OBS_2)=""]
+    [else]
+        <a style="padding-left: 30px" href="~(u_sds.PS_OBS_2)" target="_blank">Observations 2</a>
+        <br />
+    [/if]
+    ~[if.~(u_sds.PS_OBS_3=""]
+    [else]
+        <a style="padding-left: 30px" href="~(u_sds.PS_OBS_3)" target="_blank">Observations 3</a>
+        <br />
+    [/if]
+    ~[if.~(u_sds.PS_OBS_4)=""]
+    [else]
+        <a style="padding-left: 30px" href="~(u_sds.PS_OBS_4)" target="_blank">Observations 4</a>
+        <br />
+    [/if]
+    ~[if.~(u_sds.PS_OBS_5)=""]
+    [else]
+        <a style="padding-left: 30px" href="~(u_sds.PS_OBS_5)" target="_blank">Observations 5</a>
+        <br />
+    [/if]
+    ~[if.~(u_sds.PS_OBS_6)=""]
+    [else]
+        <a style="padding-left: 30px" href="~(u_sds.PS_OBS_6)" target="_blank">Observations 6</a>
+        <br />
+    [/if]
+	<br />
+	<h3> Other Documents </h3>
+	~[if.~(u_sds.Child_Plan)=""]
+	[else]
+		<a style="padding-left: 30px" href="~(u_sds.child_plan)" target="_blank">Child's Plan Link</a>
+		<br />
+	[/if]
+
 	<br />
 	<br />
 	<br />
