@@ -17,6 +17,7 @@
 
 ## 📚 Changelog 
 
+* `v1.51`: Updated plugin with various bug fixes and minor additions
 * `v1.47`: Updated PowerTeacher links page to add test links for iep, tiap and eal docs
 * `v1.46`: Minor changes to PowerTeacher Portal to remove Semester Tabs from `SDS Links` page
 * `v1.45`: Minor fixes ready for prod. PS
