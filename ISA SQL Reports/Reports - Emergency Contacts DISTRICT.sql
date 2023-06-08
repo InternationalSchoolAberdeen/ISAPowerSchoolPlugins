@@ -32,4 +32,4 @@ SELECT
     "Is Staff Child?"
 FROM ContactData
 GROUP BY "Student Name", "Grade", "Is Staff Child?", "Bus Number"
-ORDER BY "Grade", "Student Name"
+ORDER BY "Grade", "Student Name";
