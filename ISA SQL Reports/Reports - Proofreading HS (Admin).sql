@@ -173,4 +173,59 @@ GROUP BY
 ORDER BY
   "Student Name",
   "Course Name",
-  "Section";
+  "Section"; 
+
+  /* Final Report Query */
+  SELECT
+  "Student Name",
+  grade_level,
+  "Course Name",
+  "Teacher Name",
+  MAX(CASE WHEN "Standard Name" = 'Responsibility' THEN 'Comment = ' || "Final Comment" || ', Final Grade = ' || "Final Grade" || ', Standard Grade = ' || "Standard Grade" END) AS "Responsibility Grade",
+  MAX(CASE WHEN "Standard Name" = 'Collaboration' THEN 'Comment = ' || "Final Comment" || ', Final Grade = ' || "Final Grade" || ', Standard Grade = ' || "Standard Grade" END) AS "Collaboration Grade",
+  MAX(CASE WHEN "Standard Name" = 'Engagement' THEN 'Comment = ' || "Final Comment" || ', Final Grade = ' || "Final Grade" || ', Standard Grade = ' || "Standard Grade" END) AS "Engagement Grade",
+  "Last Updated"
+FROM
+  (
+    SELECT
+      s.lastfirst AS "Student Name",
+      s.grade_level,
+      c.course_name AS "Course Name",
+      sec.expression AS "Section",
+      u.lastfirst AS "Teacher Name",
+      pgf.grade AS "Final Grade",
+      to_char(pgf.comment_value) AS "Final Comment",
+      st.name AS "Standard Name",
+      sgs.standardgrade AS "Standard Grade",
+      pgf.lastgradeupdate AS "Last Updated",
+      ROW_NUMBER() OVER (
+        PARTITION BY s.lastfirst, c.course_name
+        ORDER BY pgf.lastgradeupdate DESC
+      ) AS rn
+    FROM
+      cc
+      JOIN students s ON s.id = cc.studentid
+      JOIN sections sec ON sec.id = cc.sectionid
+      JOIN courses c ON c.course_number = sec.course_number
+      JOIN schoolstaff ss ON ss.id = cc.teacherid
+      JOIN users u ON u.dcid = ss.users_dcid
+      JOIN pgfinalgrades pgf ON pgf.sectionid = cc.sectionid AND pgf.studentid = cc.studentid
+      JOIN standardgradesection sgs ON sgs.sectionsdcid = sec.dcid AND sgs.studentsdcid = s.dcid
+      JOIN standard st ON st.standardid = sgs.standardid
+    WHERE
+      s.grade_level = 9
+      AND sgs.storecode = 'S1'
+      AND s.grade_level = sgs.gradelevel
+      AND s.enroll_status = 0
+  ) subquery
+WHERE
+  rn <= 3
+GROUP BY
+  "Student Name",
+  grade_level,
+  "Course Name",
+  "Teacher Name",
+  "Last Updated"
+ORDER BY
+  "Student Name",
+  "Course Name";
