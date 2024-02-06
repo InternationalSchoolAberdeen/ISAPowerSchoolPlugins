@@ -16,7 +16,7 @@
 > This ZIP file can then be uploaded to the `Plugin Management Screen` of PS
 
 ## 📚 Changelog 
-
+* `v1.60`: Updated plugin with various fixes after PS update
 * `v1.51`: Updated plugin with various bug fixes and minor additions
 * `v1.47`: Updated PowerTeacher links page to add test links for iep, tiap and eal docs
 * `v1.46`: Minor changes to PowerTeacher Portal to remove Semester Tabs from `SDS Links` page
