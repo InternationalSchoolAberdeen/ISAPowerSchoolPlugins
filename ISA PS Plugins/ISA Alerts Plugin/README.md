@@ -92,7 +92,7 @@ $j.each(carePlanRows, function(ccid, studcid) {
 </p>
 
 ## 📚 Changelog
-
+- `v2.00`: Fixes due to PowerSchool upgrade - Feb 2024 GV
 - `v1.93`: Added new alerts and fields to powerschool
 - `v1.89`: More misc updates to the medical / emergency page
 - `v1.86`: Added new links for plans and also for expiry dates
