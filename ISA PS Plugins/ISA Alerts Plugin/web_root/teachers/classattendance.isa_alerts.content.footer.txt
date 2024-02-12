@@ -214,9 +214,6 @@
     $j.each(imageConsentRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Image Consent Alert" href="/teachers/alerts/alertImageConsent.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.camera.png" border=0 width="20" height="20" title="Image Consent Alert" /></a>');
     });
-    $j.each(childPlanRows, function(ccid, studcid) {
-	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Child's Plan" href="/teachers/alerts/alertChildPlan.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.childPlan.png" border=0 width="20" height="20" title="Child's Plan Alert" /></a>');
-    });
     $j.each(documentRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Document Alert" href="/teachers/alerts/alertSDS.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="Document Alert" /></a>');
     });
