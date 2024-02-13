@@ -1,12 +1,11 @@
-<h1 align="center">🚨 ISA PowerSchool Alerts Plugin</h1>
+<h1 align="center">🚨 ISA Staff PD Plugin</h1>
 
-* Adds custom alerts to PowerSchool Admin, Teacher & Attendance Screens
-* Alerts use PowerSchool fields to render specific student information based on various parameters that can be set by admin staff.
-* Adds many features to the `Emergency / Medical Page` of PowerSchool Admin that allows medical staff to control alerts and information relating to a students medical needs. 
+* Adds a 'PD Log' screen in the PowerSchool admin console to show a log of staff training (professional development)
+* Writes to fields in a database extension table U_STAFF_TRAINING.U_TRAINING ENTRY
+* Fields can also be updated through a form in the teacher portal
 
-NB. Use GitHub Desktop & Visual Studio Code to edit!
 
-### [Historical Versions](https://github.com/InternationalSchoolAberdeen/ISAPowerSchoolPlugins/tree/main/ISA%20Alerts%20Plugin/Previous%20Versions)
+### [Historical Versions](https://github.com/InternationalSchoolAberdeen/ISAPowerSchoolPlugins/tree/main/ISA%20PD%20Log/Previous%20Versions)
 
 ## 🗃 Packaging The Plugin
 > For each version update, update the `plugin.xml` and increment the `version` field <br>
