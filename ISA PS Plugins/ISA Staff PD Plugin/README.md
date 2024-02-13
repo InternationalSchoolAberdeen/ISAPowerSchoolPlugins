@@ -10,7 +10,7 @@
 ## 🗃 Packaging The Plugin
 > For each version update, update the `plugin.xml` and increment the `version` field <br>
 > Select the `web_root` folder and the `plugin.xml` and add them both to a ZIP file <br>
-> This ZIP file can then be uploaded to the `Plugin Management Screen` of PS
+> This ZIP file can then be uploaded to the `Plugin Management Screen` of PS 
 
 ## Adding a field to the PD Log page
 
