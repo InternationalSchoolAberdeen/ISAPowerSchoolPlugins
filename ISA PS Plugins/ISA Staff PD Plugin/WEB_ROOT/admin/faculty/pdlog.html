@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<!-- start right frame -->
+<head>
+<title>PD Log - ~(lastfirst)</title>
+~[wc:commonscripts]
+<link href="/images/css/screen.css" rel="stylesheet" media="screen">
+<link href="/images/css/print.css" rel="stylesheet" media="print">
+
+</head>
+
+<body>
+
+~[wc:admin_header_frame_css]<!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/faculty/search.html" target="_top">Staff</a> &gt; <a href="/admin/faculty/home.html?selectteacher=nosearch" target="_top">Select a Staff Member</a> &gt; PD Log - ~(lastfirst)<!-- breadcrumb end -->~[wc:admin_navigation_frame_css]
+
+<span class="account-photo">~[facultytitlephoto]</span>
+<h1>PD Log - ~(lastfirst)</h1>
+
+
+<!-- start of content and bounding box -->
+<div class="box-round">
+<h2>Professional Development Courses completed</h2>
+
+<form action="/admin/changesrecorded.white.html" method="POST">
+
+~[tlist_child:Users.U_Staff_Training.U_Training_Entry;displaycols:Training_Date,Training_Name,Training_Provider;fieldNa
+mes:Training Date, Name, Trainer Provider;type:html]
+
+<div class="button-row">
+<input type="hidden" name="ac" value="prim">
+~[submitbutton]
+</div>
+</form>
+
+
+</div>
+<!-- end of content of bounding box -->
+
+~[wc:admin_footer_frame_css]
+
+</body>
+</html><!-- end right frame -->

@@ -1,0 +1,7 @@
+<script>
+	$j(document).ready(function()
+		{
+			$j('ul#tchr_information').append("<li><a href='pdlog.html?frn=~(frn)'>PD Log</a></li>");
+		}
+	);
+</script>
