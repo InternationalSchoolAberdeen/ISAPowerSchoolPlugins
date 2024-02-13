@@ -4,9 +4,7 @@
 * Alerts use PowerSchool fields to render specific student information based on various parameters that can be set by admin staff.
 * Adds many features to the `Emergency / Medical Page` of PowerSchool Admin that allows medical staff to control alerts and information relating to a students medical needs. 
 
-<p align="center">
-    <img src="./alerts.png" title="Medical Page Guide" />
-</p>
+NB. Use GitHub Desktop & Visual Studio Code to edit!
 
 ### [Historical Versions](https://github.com/InternationalSchoolAberdeen/ISAPowerSchoolPlugins/tree/main/ISA%20Alerts%20Plugin/Previous%20Versions)
 
