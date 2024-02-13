@@ -2,11 +2,11 @@
 <plugin xmlns="http://plugin.powerschool.pearson.com"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
-	name="ISA Alerts"
-	version="1.93"
-	description="Adds alerts to admin and teacher portals, and adds existing custom medical fields to Emergency/Medical student page; with thanks to Jerome Ohnui for assistance based on the TSD Medical Alerts Plugin">
+	name="ISA PD Log"
+	version="1.00"
+	description="Adds a PD Log page for staff to record training / professional development">
 	
-	<publisher name="Gayle Veitch / Finn Lestrange">
+	<publisher name="Gayle Veitch">
 		<contact email="gayle.veitch@gmail.com" />
 	</publisher>
 </plugin>
