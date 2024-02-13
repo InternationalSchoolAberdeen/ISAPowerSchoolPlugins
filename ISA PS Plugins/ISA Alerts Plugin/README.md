@@ -92,6 +92,7 @@ $j.each(carePlanRows, function(ccid, studcid) {
 </p>
 
 ## 📚 Changelog
+- `v2.01`: Added new Counsellor Alert Images and Icons
 - `v2.00`: Fixes due to PowerSchool upgrade - Feb 2024 GV
 - `v1.93`: Added new alerts and fields to powerschool
 - `v1.89`: More misc updates to the medical / emergency page
