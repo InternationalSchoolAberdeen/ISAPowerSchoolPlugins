@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     description="ISA Student Document Storage" 
     name="ISA SDS" 
-    version="1.70" 
+    version="1.71" 
     xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd">
 
     <publisher name="Gayle Veitch / Finn Lestrange">
