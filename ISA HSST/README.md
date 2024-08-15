@@ -1,4 +1,4 @@
-<h1 align="center">🎒 ISA's Custom Student Tracke </h1> 
+<h1 align="center"> 🕵️ ISA's PowerSchool + Looker Studio Student Tracker</h1> 
 
 > [!Important]
 > PowerSchool SIS Export + `GAMADV-XT3` upload script + Google Sheets.
