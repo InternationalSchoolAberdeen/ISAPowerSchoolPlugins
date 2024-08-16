@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
+ name="ISA HHST PowerQuerys"
+ version="1.0"
+ description="PowerQuerys that export the required data from powerschool for the High School Student Tracker (HSST).">
+	<publisher name="Finn Lestrange">
+		<contact email="finn.lestrange@gmail.com"/>
+	</publisher>
+</plugin>
