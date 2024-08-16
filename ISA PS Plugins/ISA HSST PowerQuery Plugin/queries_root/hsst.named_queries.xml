@@ -173,12 +173,12 @@
     coreTable="students" flattened="true">
         <description>Exports all Learning Habits for HS Students. </description>
        <columns>
-            <column column="TrackerHabits.01StudentNumber">01StudentNumber</column>
-            <column column="TrackerHabits.02Name">02Name</column>
-            <column column="TrackerMAP.03StoreCode">03StoreCode</column>
-            <column column="TrackerMAP.04CourseName">04CourseName</column>
-            <column column="TrackerMAP.05Name">05Name</column>
-            <column column="TrackerMAP.06StandardGrade">06StandardGrade</column>
+            <column column="TrackerLH.01StudentNumber">01StudentNumber</column>
+            <column column="TrackerLH.02Name">02Name</column>
+            <column column="TrackerLH.03StoreCode">03StoreCode</column>
+            <column column="TrackerLH.04CourseName">04CourseName</column>
+            <column column="TrackerLH.05Name">05Name</column>
+            <column column="TrackerLH.06StandardGrade">06StandardGrade</column>
         </columns> 
         <sql>
             <![CDATA[
