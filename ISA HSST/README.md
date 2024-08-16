@@ -14,13 +14,14 @@
 
 * This task scheduler runs a `.bat` file that contains the following script.
 
-```powershell
+```shell
 cd D:\GAMADV-XTD3
-.\gam.exe user $gam-user-email update drivefile $sheet-id csvsheet name:DataImport localfile D:\PSShare\external\autosend\HSSTstoredgradesexport retainname
+.\gam.exe user $gam-user-email update drivefile $spreadsheet-id csvsheet id:$sheet-id localfile D:\PSShare\external\autosend\HSSTstoredgradesexport retainname
 ```
 
 Where:
 * `$gam-user-email` - The email you have configured for access using `GAM`
+* `$spreadsheet-id` - The ID of the Gooogle Spreadsheet containing the sheet to update
 * `$sheet-id` - The ID of the Google Sheet to update
 
 > [!Tip]

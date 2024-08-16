@@ -1,2 +1,2 @@
 cd D:\GAMADV-XTD3
-.\gam.exe user $gam-user-email update drivefile $sheet-id csvsheet name:DataImport localfile D:\PSShare\external\autosend\HSSTstoredgradesexport retainname
+.\gam.exe user gveitch@isa.aberdeen.sch.uk update drivefile 1eZcoamEcugJNRFcf8Y4rIuuCTWemKZpRHL6sOYdcZEQ csvsheet id:423274577 localfile D:\PSShare\external\autosend\HSSTstoredgradesexport retainname
