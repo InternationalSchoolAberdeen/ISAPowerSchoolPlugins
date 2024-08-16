@@ -8,7 +8,22 @@
 > [!note]
 > **Please Note** : you must have an instance of `GAMADV-XT3` configured on your live PowerSchool server along with having an authenticated oAuth session and GAM project that has full domain access.
 
-## How the Script Works
+## Configuring PowerSchool Exports
+First install the plugin `ISA HHST PowerQuerys` located in this repo, `ISA PS Plugins/ISA HSST PowerQuery Plugin`. This allows you to use custom SQL queries to pull out specific data for export.
+
+> [!Warning]
+> Make sure the names of the columns in the export template match those you are going to use in Google Sheets / Looker Studio.
+
+Next, head to the Export Page - `/admin/datamgmt/exporttemplates.html#/export-schedule-content` & setup new export templates using these powerqueries and the fields they return.
+
+> [!Warning]
+> Please also ensure that the export settings specify `UTF-8` encoding and `comma` as the delimiter.
+> ![](images/createExportTemplate.png)
+
+Then head to the `My Templates` and setup scheduled exports for each of the new export templates.
+
+
+## GAM Upload Script
 * The script runs a windows scheduled task every night after powerschool has exported the list of students alongside their grades + learning standard data.
 ![](images/task.png)
 
@@ -26,3 +41,7 @@ Where:
 
 > [!Tip]
 > This then will populate a sheet named `DataImport` within the main spreadsheet with id: `$sheet-id`.
+
+
+## Google Sheets Script
+> [!import]
