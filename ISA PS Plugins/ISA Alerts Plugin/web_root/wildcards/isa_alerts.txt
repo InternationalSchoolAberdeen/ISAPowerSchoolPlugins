@@ -12,7 +12,11 @@
 	~([students.U_MEDICAL]NoMedicationPermitted;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Medication Alert" href="/admin/alerts/alertMedication.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.nomedication.png" border=0 width="20" height="20" title="No Medication Alert" /></a>)
 	~([students.U_SDS]Alert_LS;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Learning Support Alert" href="/admin/alerts/alertLS.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.ls.png" border=0 width="20" height="20" title="Learning Support Alert"/></a>)
 	~([students.U_SDS]Alert_EAL;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="EAL Alert" href="/admin/alerts/alertEAL.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.eal.png" border=0 width="20" height="20" title="EAL Alert"/></a>)
-	~([students.U_CONSENT]Images_Sharing;if.fieldvalue.1.then=;if.fieldvalue.0.then=<a title="Image Consent Alert" href="/admin/alerts/alertImageConsent.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.camera.png" border=0 width="20" height="20" title="Image Consent Alert" /></a>)
+
+	~[if.~(U_CONSENT.Images_SocialMedia)="1" | ~(U_CONSENT.Images_External)="1" | ~(U_CONSENT.Images_Internal)="1"]
+	<a title="Image Consent Alert" href="/admin/alerts/alertImageConsent.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.camera.png" border=0 width="20" height="20" title="Image Consent Alert" /></a>
+	[/if]
+
 	~([students.U_SDS]Alert_Child_Plan;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Child's Plan Alert" href="/admin/alerts/alertChildPlan.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.childPlan.png" border=0 width="20" height="20" title="Child's Plan Alert" /></a>)
 	~([students.U_SDS]COUNSELLOR_ALERT;if.fieldvalue.0.then=;if.fieldvalue.1.then=<a title="Counsellor Alert" href="/admin/alerts/alertCounsellor.html?frn=~(frn)" class="dialogM"><img src="/images/isa_alert.counsellor.png" border=0 width="20" height="20" title="Counsellor Alert" /></a>)
 

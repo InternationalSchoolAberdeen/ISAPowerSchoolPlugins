@@ -45,6 +45,8 @@
 </a>)
 ```
 
+![image](https://github.com/user-attachments/assets/40af2c83-cc86-40bd-b0b1-e13c4e4c9c99)
+
 6. That is all that has to be done for an admin only alert. To add an alert for the teacher side of PowerSchool the following steps have to be done.
 7. Make a copy of your `testAlert.html` and place it in `web_root/teachers/alerts`.
 8. Next, open up `web_root/wildcards/isa_alerts_teachers.txt` and add the following code.
@@ -92,6 +94,7 @@ $j.each(carePlanRows, function(ccid, studcid) {
 </p>
 
 ## 📚 Changelog
+- `v2.20`: Updated Image Alert to use new Fields `(U_CONSENT.Images_SocialMedia, U_CONSENT.Images_External, U_CONSENT.Images_Internal)`
 - `v2.01`: Added new Counsellor Alert Images and Icons
 - `v2.00`: Fixes due to PowerSchool upgrade - Feb 2024 GV
 - `v1.93`: Added new alerts and fields to powerschool
