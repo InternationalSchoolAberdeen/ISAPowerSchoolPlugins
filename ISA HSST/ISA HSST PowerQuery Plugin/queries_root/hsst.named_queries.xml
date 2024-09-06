@@ -1,0 +1,138 @@
+<queries>
+    <query name="dev.finnlestrange.hsst.storedgrades.exportquery"
+    coreTable="students" flattened="true">
+        <description>Exports all stored grades for HS students for all years they have been in HS.</description>
+       <columns>
+            <column column="TrackerSG.01StudentNumber">01StudentNumber</column>
+            <column column="TrackerSG.02Name">02Name</column>
+            <column column="TrackerSG.03GGradeLevel">03GGradeLevel</column>
+            <column column="TrackerSG.04StoredGradeLevel">04StoredGradeLevel</column>
+            <column column="TrackerSG.05Term">05Term</column>
+            <column column="TrackerSG.06Course">06Course</column>
+            <column column="TrackerSG.07Grade">07Grade</column>
+        </columns> 
+        <sql>
+            <![CDATA[
+            SELECT 
+                s.student_number,
+                s.LastFirst, 
+                s.grade_level,
+                sg.grade_level stgrade_level,
+                sg.storecode,  
+                sg.course_name,
+                sg.grade
+            FROM students s
+            LEFT JOIN storedgrades sg
+                ON sg.studentid = s.id
+                AND sg.grade_level IN (9, 10, 11, 12)
+                AND sg.storecode IN ('S1', 'P1', 'S2', 'P2')
+            WHERE s.grade_level IN (9, 10, 11, 12)
+                AND s.enroll_status = 0
+            ORDER BY s.grade_level, s.LastFirst, sg.storecode
+            ]]>
+        </sql>
+    </query>
+    <query name="dev.finnlestrange.hsst.learninghabits.exportquery"
+    coreTable="standardgradesection" flattened="true">
+        <description>Exports all Learning Habits for HS Students. </description>
+       <columns>
+            <column column="TrackerLH.01StudentNumber">01StudentNumber</column>
+            <column column="TrackerLH.02Name">02Name</column>
+            <column column="TrackerLH.03StoreCode">03StoreCode</column>
+            <column column="TrackerLH.04CourseName">04CourseName</column>
+            <column column="TrackerLH.05Name">05Name</column>
+            <column column="TrackerLH.06StandardGrade">06StandardGrade</column>
+        </columns> 
+        <sql>
+            <![CDATA[
+            select student_number, lastfirst, storecode, course_name, name, standardgrade
+            from (
+                select s.student_number, s.lastfirst, sgs.storecode, c.course_name, st.name, sgs.standardgrade, tb.date2, row_number() over (partition by s.student_number, c.course_name, st.identifier order by tb.date2 desc) ordinal
+            from standardgradesection sgs
+                join students s on s.dcid = sgs.studentsdcid
+                join standard st on st.standardid = sgs.standardid
+                join sections sec on sec.dcid = sgs.sectionsdcid
+                join courses c on c.course_number = sec.course_number
+            inner join termbins tb on tb.schoolid=sec.schoolid and tb.termid=sec.termid and tb.storecode=sgs.storecode
+            where st.name IN ('Responsibility', 'Engagement', 'Collaboration')
+                and st.yearid = ~(curyearid)
+                and s.grade_level IN (9,10,11,12)
+                and s.enroll_status = 0
+                and sgs.standardgrade IS NOT NULL ) x
+            where ordinal=1
+                order by lastfirst, name
+            ]]>
+        </sql>
+    </query> 
+    <query name="dev.finnlestrange.hsst.attendance.exportquery"
+    coreTable="attendance" flattened="true">
+        <description>Exports all Attendance Data for HS Students. </description>
+       <columns>
+            <column column="TrackerAtt.01StudentNumber">01StudentNumber</column>
+            <column column="TrackerAtt.02Name">02Name</column>
+            <column column="TrackerAtt.03Absent">03Absent</column>
+            <column column="TrackerAtt.04AuthAbsent">04AuthAbsent</column>
+            <column column="TrackerAtt.05FieldTrip">05FieldTrip</column>
+            <column column="TrackerAtt.06Tardy">06TardTestScorey</column>
+            <column column="TrackerAtt.07NotReq">07NotReq</column>
+        </columns> 
+        <sql>
+            <![CDATA[
+            select
+                s.student_number,
+                s.lastfirst,
+                COUNT(CASE WHEN att_c.Att_Code in ('A') THEN att.studentid END) absent,
+                COUNT(CASE WHEN att_c.Att_Code in ('AA') THEN att.studentid END) authorised_absent,
+                COUNT(CASE WHEN att_c.Att_Code in ('FT') THEN att.studentid END) field_trip,
+                COUNT(CASE WHEN att_c.Att_Code in ('T') THEN att.studentid END) tardy,
+                COUNT(CASE WHEN att_c.Att_Code in ('NR') THEN att.studentid END) not_required
+            FROM
+                attendance att
+            JOIN attendance_code att_c ON att_c.id=att.attendance_codeid
+            JOIN students s ON s.id=att.studentid
+            WHERE
+                s.grade_level IN (9,10,11,12)
+                AND s.enroll_status = 0
+                AND att.yearid = ~(curyearid)
+                AND 
+                    att.Att_Mode_Code='ATT_ModeDaily'
+            GROUP BY
+                s.student_number,
+                s.lastfirst
+            ]]>
+        </sql>
+    </query>
+    <query name="dev.finnlestrange.hsst.currentgrades.exportquery"
+    coreTable="students" flattened="true">
+        <description>Exports all current grades for HS Students. </description>
+       <columns>
+            <column column="TrackerCG.01StudentNumber">01StudentNumber</column>
+            <column column="TrackerCG.02Name">02Name</column>
+            <column column="TrackerCG.03GradeLevel">03GradeLevel</column>
+            <column column="TrackerCG.04Grade">04Grade</column>
+            <column column="TrackerCG.05Teacher">05Teacher</column>
+            <column column="TrackerCG.06LastUpdate">06LastUpdate</column>
+        </columns> 
+        <sql>
+            <![CDATA[
+            ]]>
+        </sql>
+    </query>
+    <query name="dev.finnlestrange.hsst.combinedresults.exportquery"
+    coreTable="students" flattened="true">
+        <description>Exports combined results for HS Students. </description>
+       <columns>
+            <column column="TrackerCG.01StudentNumber">01StudentNumber</column>
+            <column column="TrackerCG.02Name">02Name</column>
+            <column column="TrackerCG.03GradeLevel">03GradeLevel</column>
+            <column column="TrackerCG.04Grade">04Grade</column>
+            <column column="TrackerCG.05Teacher">05Teacher</column>
+            <column column="TrackerCG.06LastUpdate">06LastUpdate</column>
+        </columns> 
+        <sql>
+            <![CDATA[
+            ]]>
+        </sql>
+    </query>
+    
+</queries>
