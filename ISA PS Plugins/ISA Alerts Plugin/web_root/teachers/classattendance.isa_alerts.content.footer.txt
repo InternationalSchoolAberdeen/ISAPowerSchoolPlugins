@@ -81,9 +81,9 @@
         left outer join u_def_ext_students4 on u_def_ext_students4.studentsdcid = s.dcid
 		    where cc.sectionid = ~(gpv.sectionid;sqlText)
 		      and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1
-          and ( u_def_ext_students4.Images_External = 1
-		  or u_def_ext_students4.Images_SocialMedia = 1
-		  or u_def_ext_students4.Images_Internal = 1)
+          and ( u_def_ext_students4.Images_External = 0
+		  or u_def_ext_students4.Images_SocialMedia = 0
+		  or u_def_ext_students4.Images_Internal = 0)
 		    ]"~(1)":"~(2)",[/tlist_sql]"":""
 	  };
 	
@@ -231,7 +231,7 @@
     $j.each(documentRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Document Alert" href="/teachers/alerts/alertSDS.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.document.png" border=0 width="20" height="20" title="Document Alert" /></a>');
     });
-    $j.each(documentRows, function(ccid, studcid) {
+    $j.each(counsellorRows, function(ccid, studcid) {
 	    $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('<a style="padding-right:5px;" title="Counsellor Alert" href="/teachers/alerts/alertCounsellor.html?frn=001'+ studcid +'" class="dialogM"><img src="/images/isa_alert.counsellor.png" border=0 width="20" height="20" title="Counsellor Alert" /></a>');
     });
 

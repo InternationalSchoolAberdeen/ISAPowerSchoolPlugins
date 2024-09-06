@@ -3,16 +3,21 @@
     <div class="alertContent">
         <h2 aria-label="~[text:psx.html.admin_alerts.medicalalertenhanced.health_alert]" tabindex="0">Image Consent Alert</h2>
         <p tabindex="0" data-ng-style="{'margin-left':'0'}" class="overflowwrapbreak">
-            ~[if#general.~(U_CONSENT.Images_General)=1]
-                <p><b>General Image Consent: </b>Allowed</p>
+            ~[if#general.~(U_CONSENT.Images_Internal)=0]
+                <p><b>Internal Image Consent: </b>Not Allowed</p>
             [else#general]
-                <p><b>General Image Consent: </b>Not Allowed</p>
+                <p><b>Internal Image Consent: </b>Allowed</p>
             [/if#general]
-            ~[if#sharing.~(U_CONSENT.Images_Sharing)=1]
-                <p><b>Image Sharing Consent: </b>Allowed</p>
+            ~[if#sharing.~(U_CONSENT.Images_External)=0]
+                <p><b>External Image Consent: </b>Not Allowed</p>
             [else#sharing]
-            <p><b>Image Sharing Consent: </b>Not Allowed</p>
+                <p><b>External Image Consent: </b>Allowed</p>
             [/if#sharing]
+            ~[if#social.~(U_CONSENT.Images_SocialMedia)=0]
+                <p><b>Social Media Image Consent: </b>Not Allowed</p>
+            [else#social]
+                <p><b>Social Media Image Consent: </b>Allowed</p>
+            [/if#social]
         </p>
     </div>
 </div>
